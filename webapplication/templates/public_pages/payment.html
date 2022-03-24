@@ -1,0 +1,148 @@
+{% extends "public_assets.html" %}
+{% block content %}
+    <main class="container">
+        <header class="row heading">
+            <div class="col-lg-8">
+                <img class="img-fluid logo" src="{{ url_for('static', filename='assets/images/logo.png')}}" alt="" />
+            </div>
+            <div class="col-lg-4 d-flex align-items-center justify-content-between">
+                <div class="bookingReference">
+                    <a href="{{ url_for('main.index')}}">Go to Booking reference</a>
+                </div>
+                <div class="userDetails">
+                    <p class="userName">Hello Robert!</p>
+                    <i class="bi bi-person userIcon colorType2"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="stepsHeader bgType3">
+            <ul class="text-center">
+                <li>Three Steps to upgrade</li>
+                <li><a href="{{ url_for('main.upgrade')}}"><span id="checkedSpan"><i class="fa fa-check" id="stepHeaderCheckIcon"></i></span>Select Upgrade</a>
+                </li>
+                <li><a href="{{ url_for('main.review')}}"><span id="checkedSpan"><i class="fa fa-check" id="stepHeaderCheckIcon"></i></span>Review and Submit</a>
+                </li>
+                <li class="stepsHeaderActive"><span>3</span>Payment Information</li>
+            </ul>
+        </div>
+
+        <section class="sectionContainer bgType1">
+            <div class="row">
+                <div class="paymentContainer col-9 my-2 py-3">
+                    <div class="paymentHeading">
+                        <h3>Select the payment method</h3>
+                        <p class="colorType4">All transactions are secured and encrypted. Credit card information is
+                            never stored.</p>
+                    </div>
+
+                    <div class="paymentMethodContainer bgType6 my-3 ">
+                        <div class="paypalContainer">
+                            <input type="radio" name="payment" />
+                            <img class="paypalLogo img-fluid" src="{{ url_for('static', filename='assets/images/paypal.png')}}" alt="">
+                        </div>
+                        <div class="paypalContainer d-flex justify-content-between align-items-center"
+                            style="border: none;">
+                            <div class="creditCardOption d-flex align-items-center">
+                                <input type="radio" name="payment" style="top: 0;" />
+                                <p>Credit Card / Debit Card</p>
+                            </div>
+                            <div class="creditCardImages">
+                                <img class="cardLogo img-fluid" src="{{ url_for('static', filename='assets/images/maestro.svg')}}" alt="">
+                                <img class="cardLogo img-fluid" src="{{ url_for('static', filename='assets/images/visa.png')}}" alt="">
+                                <img class="cardLogo img-fluid" src="{{ url_for('static', filename='assets/images/americanexpress.jpg')}}" alt="">
+                                <img class="cardLogo img-fluid" src="{{ url_for('static', filename='assets/images/discover.png')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="cardLayoutContainer d-flex justify-content-center my-4">
+                            <img class="img-fluid" src="{{ url_for('static', filename='assets/images/cardlayout.png')}}" alt="">
+                        </div>
+                        <div class="cardDetailsContainer">
+                            <div class="row">
+                                <div class="col-3"></div>
+                                <div class="cardNumberContainer col-6">
+                                    <p class="colorType4 my-1">Card Number</p>
+                                    <div class="cardNumber d-flex justify-content-start align-items-center">
+                                        <div class="cardIcon mx-1">
+                                            <i class="far fa-credit-card colorType6"></i>
+                                        </div>
+                                        <div class="cardNumberHide mx-2 colorType6">
+                                            <i class="fas fa-asterisk"></i>
+                                            <i class="fas fa-asterisk"></i>
+                                            <i class="fas fa-asterisk"></i>
+                                            <i class="fas fa-asterisk"></i>
+                                        </div>
+                                        <div class="cardNumberHide mx-2 colorType6">
+                                            <i class="fas fa-asterisk"></i>
+                                            <i class="fas fa-asterisk"></i>
+                                            <i class="fas fa-asterisk"></i>
+                                            <i class="fas fa-asterisk"></i>
+                                        </div>
+                                        <div class="cardNumberHide mx-2 colorType6">
+                                            <i class="fas fa-asterisk"></i>
+                                            <i class="fas fa-asterisk"></i>
+                                            <i class="fas fa-asterisk"></i>
+                                            <i class="fas fa-asterisk"></i>
+                                        </div>
+                                        <div class="cardNumberHide mx-2 colorType6">
+                                            <i class="fas fa-asterisk"></i>
+                                            <i class="fas fa-asterisk"></i>
+                                            <i class="fas fa-asterisk"></i>
+                                            <i class="fas fa-asterisk"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3"></div>
+                            </div>
+                        </div>
+                        <div class="cardDetailsContainer my-4 ">
+                            <div class="row">
+                                <div class="col-3"></div>
+                                <div class="cardNumberContainer col-6">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <p class="colorType4 my-1">Card Holder</p>
+                                            <div class="cardNumber" style="border: 1px solid #015aaa;">
+                                                Robert Downey
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <p class="colorType4 my-1">Exp Date</p>
+                                            <div class="cardNumber text-center colorType6">
+                                                12/22
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <p class="colorType4 my-1">CVC</p>
+                                            <div class="cardNumber text-center colorType6">
+                                                * * *
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3"></div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 4rem;">
+                            <div class="col-5"></div>
+                            <div class="col-2">
+                                <div class="proceedPaymentContainer">
+                                    <a href="{{ url_for('main.payment')}}">
+                                        <div class="proceedPaymentBtn bgType9 text-center px-3 py-2">
+                                           Pay
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-5"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+
+                </div>
+
+            </div>
+
+        </section>
+        {% endblock content %}

@@ -1,0 +1,3371 @@
+{% extends "public_assets.html" %}
+{% block content %}
+  <main class="container">
+
+    <!-- -------------------------------------------------------------Header Section Starts here------------------------------------------------------------>
+    <header class="row heading">
+      <div class="col-lg-8 col-md-12">
+        <img class="img-fluid logo" src="{{ url_for('static', filename='assets/images/logo.png')}}" alt="" />
+      </div>
+      <div class="col-lg-4 col-md-12 d-flex align-items-center justify-content-between">
+        <div class="bookingReference">
+          <a href="{{ url_for('main.index')}}">Go to Booking reference</a>
+        </div>
+        <div class="userDetails">
+          <p class="userName">Hello Robert!</p>
+          <i class="bi bi-person userIcon colorType2"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="stepsHeader bgType3">
+      <ul class="text-center">
+        <li>Three Steps to upgrade</li>
+        <li class="stepsHeaderActive"><span class="colorType3">1</span>Select Upgrade</li>
+        <li><a href="{{ url_for('main.review')}}"> <span class="colorType3">2</span>Review and Submit </a></li>
+        <li><a href="{{ url_for('main.payment')}}"><span class="colorType3">3</span>Payment Information</a></li>
+      </ul>
+    </div>
+
+
+    <!-- ------------------------------------------------------------Navbar Menu Starts here ---------------------------------------------------------------->
+    <div class="travelMenu">
+      <div class="row">
+        <div class="col-9">
+          <ul class="bgType2">
+            <li id="upgradeTravel" class="linkActive">Upgrade Travel Option</li>
+            <li id="preferredSeat">Preferred Seat</li>
+            <li id="emptySeat">Empty Seat</li>
+            <li id="addLuggage">Add Luggage</li>
+            <li id="addLounge">Add Lounge</li>
+          </ul>
+        </div>
+        <div class="sideItems col-3">
+          <p>Selected Ancillary Items:</p>
+        </div>
+      </div>
+    </div>
+
+
+    <section class="sectionContainer bgType1">
+      <!-- ----------------------------------------------------------Update Travel Section Starts here ------------------------------------------------------>
+      <div class="row">
+        <div class="col-lg-9">
+          <div class="passenger">
+            <div class="firstPassenger">
+              <div class="passengerContainer">
+                <div class="passengerName">
+                  <p class="subNames">Passenger Name 1:</p>
+                  <h4 class="colorType3">Robert Downey</h4>
+                </div>
+                <div class="travelDetails">
+                  <div class="travelOption">
+                    <label class="subNames"> Travelling: </label>
+                    <input type="radio" name="travel" id="onward" /><label class="subNames"
+                      id="radioName">Onward</label>
+                    <input type="radio" name="travel" id="onward" /><label class="subNames"
+                      id="radioName">Return</label>
+                  </div>
+                  <div class="cityNames">
+                    <label class="cityName">(BOM)</label>
+                    <label>---<i class="fas fa-plane planeIcon"></i></label>
+                    <label class="cityName">(KUL)</label>
+                    <label>---<i class="fas fa-plane planeIcon"></i></label>
+                    <label class="cityName">(SYD)</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="firstCity">
+                <div class="flightDetailsContainer">
+                  <div class="flightOD col-6">
+                    <div class="checkBoxContainer">
+                      <input type="checkbox" name="" id="bomKulCheckBox" onclick="bomKul()" />
+                    </div>
+                    <div class="citiesContainer">
+                      <div class="city">
+                        <p>Mumbai</p>
+                        <p class="colorType4">(BOM)</p>
+                      </div>
+                      <div class="timeDate text-center">
+                        <label>5hr 10m</label>
+                        <label>- - - - - - - - - -
+                          <i class="fas fa-plane planeIcon"></i></label>
+                        <label>10 Jan 2021</label>
+                      </div>
+                      <div class="city toCity">
+                        <p>Kuala Lampur</p>
+                        <p class="colorType4">(KUL)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="airways col-2">
+                    <p class="colorType4 flightHeading">Airways</p>
+                    <p class="flightValue">Malaysia Airlines</p>
+                  </div>
+                  <div class="flightName col-2">
+                    <p class="colorType4 flightHeading">Flight Name</p>
+                    <p class="flightValue">Flight MH195</p>
+                  </div>
+                  <div class="flightClass col-2">
+                    <p class="colorType4 flightHeading">Class</p>
+                    <p class="flightValue">Economy</p>
+                  </div>
+                </div>
+                <div class="biddingSection">
+                  <div class="row">
+                    <div class="upgradeType col-lg-3">
+                      <p>Select Upgrade Type</p>
+                      <div class="selectContainer" id="p1">
+                        <p id="selectClass1">Select Class</p>
+                        <div class="downArrow">
+                          <i class="fa fa-angle-down" id="arrowIcon1"></i>
+                        </div>
+                      </div>
+                      <div class="upgradeTypeList" id="list1">
+                        <p id="selectBusiness1"><i class="fas fa-briefcase"></i>Business Class</p>
+                        <p id="selectFirst1"><i class="fas fa-chair"></i>First Class</p>
+                      </div>
+
+                      <!-- <select class="form-select" aria-label="Default select example">
+                        <option value="">Select Class</option>
+                        <option value="Business">
+                          <p><i class="fas fa-briefcase"></i>Business Class</p>
+                        </option>
+                        <option value="First">
+                          <p><i class="fas fa-chair"></i>First Class</p>
+                        </option>
+                      </select> -->
+
+                      <div class="viewCabin">
+                        <label class="showCabin" id="showCabin1">View cabin</label>
+
+                        <div class="cabinImageContainer bgType3" id="cabinImageContainer1">
+                          <div><i class="fas fa-times colorType5 closeBtn" id="closeCabin1"></i></div>
+                          <div class="cabinHeading text-center">
+                            <h3 class="businessClass cabinHeadingActive" id="businessClass1">Business Class</h3>
+                            <h3 class="firstClass" id="firstClass1">First Class</h3>
+                          </div>
+                          <div class="businessClassImages" id="businessClassImages1">
+                            <div class="cabinLargeImage mt-3">
+                              <img id="largeBusinessImage1" class="img-fluid largeImage"
+                                src="{{ url_for('static', filename='assets/images/business1.jpg')}}" alt="">
+                            </div>
+                            <div class="cabinImageList">
+                              <img id="businessImg1" class="img-fluid smallImage smallImageActive"
+                                src="{{ url_for('static', filename='assets/images/business1.jpg')}}" alt="" onclick="enlargeBusinessImage1(this)">
+                              <img id="businessImg2" class="img-fluid smallImage" src="{{ url_for('static', filename='assets/images/business2.jpg')}}"
+                                alt="" onclick="enlargeBusinessImage1(this)">
+                              <img id="businessImg3" class="img-fluid smallImage" src="{{ url_for('static', filename='assets/images/business3.jpg')}}"
+                                alt="" onclick="enlargeBusinessImage1(this)">
+                              <img id="businessImg4" class="img-fluid smallImage" src="{{ url_for('static', filename='assets/images/business4.jpg')}}"
+                                alt="" onclick="enlargeBusinessImage1(this)">
+                            </div>
+                          </div>
+
+                          <div class="firstClassImages" id="firstClassImages1">
+                            <div class="cabinLargeImage mt-3">
+                              <img class="img-fluid largeImage" id="largeFirstImage1" src="{{ url_for('static', filename='assets/images/first1.jpg')}}"
+                                alt="">
+                            </div>
+                            <div class="cabinImageList">
+                              <img id="firstClassImg1" class="img-fluid smallImage smallImageActive"
+                                src="{{ url_for('static', filename='assets/images/first1.jpg')}}" alt="" onclick="enlargeFirstImage1(this)">
+                              <img id="firstClassImg2" class="img-fluid smallImage" src="{{ url_for('static', filename='assets/images/first2.jpg')}}" alt=""
+                                onclick="enlargeFirstImage1(this)">
+                              <img id="firstClassImg3" class="img-fluid smallImage" src="{{ url_for('static', filename='assets/images/first3.jpg')}}" alt=""
+                                onclick="enlargeFirstImage1(this)">
+                              <img id="firstClassImg4" class="img-fluid smallImage" src="{{ url_for('static', filename='assets/images/first4.jpg')}}" alt=""
+                                onclick="enlargeFirstImage1(this)">
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="sliderContainer col-lg-6">
+                      <div class="sliderPrice text-center">
+                        <h6>MYR <span id="biddingPrice1">600</span></h6>
+                      </div>
+                      <div class="sliderRangeContainer text-center d-flex justify-content-between align-items-center">
+                        <p>No offer</p>
+                        <div class="sliderTootipContainer w-100">
+                          <input id="slider1" class="rangeSlider1" type="range" min="0" max="100" data-step="1"
+                            value="0">
+                          <div class="sliderTooltip1" id="biddingTooltip1">BID</div>
+                        </div>
+                        <p>MYR 1000</p>
+                        <div class="toolTipContainer">
+                          <i class="fas fa-info-circle" id="tool"></i>
+                          <div class="tooltipText">Confirm your upgrade class after paying the amount</div>
+                        </div>
+                      </div>
+
+                      <div class="slideText text-center">
+                        <p class="colorType4">
+                          <i class="fas fa-chevron-right colorType6"></i>
+                          <i class="fas fa-chevron-right colorType7"></i>
+                          <i class="fas fa-chevron-right colorType8"></i>
+                          <i class="fas fa-chevron-right colorType9"></i>
+                          Slide till the end for instant confirmation
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="meterContainer col-lg-3">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <p id="biddingText1" style="color: red;">Bidding</p>
+                        <div id="wrapper">
+                          <svg id="meter">
+                            <!-- <circle id="outline_curves" class="circle outline" cx="50%" cy="50%" ></circle> -->
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#f7494f" stroke-width="60"
+                              stroke-dasharray="95, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#f7794c" stroke-width="60"
+                              stroke-dasharray="81, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#fbb03b" stroke-width="60"
+                              stroke-dasharray="67, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#dee35a" stroke-width="60"
+                              stroke-dasharray="54, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#a2d55f" stroke-width="60"
+                              stroke-dasharray="41, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#59bc67" stroke-width="60"
+                              stroke-dasharray="27, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#15ad5d" stroke-width="60"
+                              stroke-dasharray="14, 189" fill="none"></circle>
+
+
+                            <circle id="mask1" class="circle" cx="50%" cy="50%"></circle>s
+
+
+                            <!-- <circle id="outline_ends" class="circle outline" cx="50%" cy="50%"></circle> -->
+                          </svg>
+                          <img id="meter_needle1" src="{{ url_for('static', filename='assets/images/svg-meter-gauge-needle.svg')}}" alt="">
+
+                        </div>
+                        <p id="confirmText1" style="color: gray;">Confirm</p>
+                      </div>
+                      <div class="offeredContainer text-center">
+                        <p>Offered Strength</p>
+                        <h5 id="lowMediumConfirm1">LOW</h5>
+                      </div>
+                      <div class="toolTipContainer meterTooltip">
+                        <i class="fas fa-info-circle" id="tool"></i>
+                        <div class="tooltipText">Offer Strength confirmation chances</div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="secondCity">
+                <div class="flightDetailsContainer">
+                  <div class="flightOD col-6">
+                    <div class="checkBoxContainer">
+                      <input type="checkbox" name="" id="kulSydCheckBox" onclick="kulSyd()" />
+                    </div>
+                    <div class="citiesContainer">
+                      <div class="city">
+                        <p>Kuala Lumpur</p>
+                        <p class="colorType4">(KUL)</p>
+                      </div>
+                      <div class="timeDate text-center">
+                        <label>8hr 20m</label>
+                        <label>- - - - - - - - - -
+                          <i class="fas fa-plane planeIcon"></i></label>
+                        <label>10 Jan 2021</label>
+                      </div>
+                      <div class="city toCity">
+                        <p>Sydney</p>
+                        <p class="colorType4">(SYD)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="airways col-2">
+                    <p class="colorType4 flightHeading">Airways</p>
+                    <p class="flightValue">Malaysia Airlines</p>
+                  </div>
+                  <div class="flightName col-2">
+                    <p class="colorType4 flightHeading">Flight Name</p>
+                    <p class="flightValue">Flight MH0141</p>
+                  </div>
+                  <div class="flightClass col-2">
+                    <p class="colorType4 flightHeading">Class</p>
+                    <p class="flightValue">Economy</p>
+                  </div>
+                </div>
+                <div class="biddingSection">
+                  <div class="row">
+                    <div class="upgradeType col-lg-3">
+                      <p>Offered Upgrade Type</p>
+                      <div class="selectContainer">
+                        <p>
+                          </i> First Class
+                        </p>
+
+                      </div>
+                      <div class="viewCabin">
+                        <label class="showCabin" id="showCabin2">View cabin</label>
+
+                        <div class="cabinImageContainer bgType3" id="cabinImageContainer2">
+                          <div><i class="fas fa-times colorType5 closeBtn" id="closeCabin2"></i></div>
+                          <div class="cabinHeading text-center">
+                            <h3 class="businessClass cabinHeadingActive" id="businessClass2">Business Class</h3>
+                            <h3 class="firstClass" id="firstClass2">First Class</h3>
+                          </div>
+                          <div class="businessClassImages" id="businessClassImages2">
+                            <div class="cabinLargeImage mt-3">
+                              <img class="img-fluid largeImage" id="largeBusinessImage2"
+                                src="{{ url_for('static', filename='assets/images/business1.jpg')}}" alt="">
+                            </div>
+                            <div class="cabinImageList">
+                              <img id="businessImg5" class="img-fluid smallImage smallImageActive"
+                                src="{{ url_for('static', filename='assets/images/business1.jpg')}}" alt="" onclick="enlargeBusinessImage2(this)">
+                              <img id="businessImg6" class="img-fluid smallImage" src="{{ url_for('static', filename='assets/images/business2.jpg')}}"
+                                alt="" onclick="enlargeBusinessImage2(this)">
+                              <img id="businessImg7" class="img-fluid smallImage" src="{{ url_for('static', filename='assets/images/business3.jpg')}}"
+                                alt="" onclick="enlargeBusinessImage2(this)">
+                              <img id="businessImg8" class="img-fluid smallImage" src="{{ url_for('static', filename='assets/images/business4.jpg')}}"
+                                alt="" onclick="enlargeBusinessImage2(this)">
+                            </div>
+                          </div>
+
+                          <div class="firstClassImages" id="firstClassImages2">
+                            <div class="cabinLargeImage mt-3">
+                              <img class="img-fluid largeImage" id="largeFirstImage2" src="{{ url_for('static', filename='assets/images/first1.jpg')}}"
+                                alt="">
+                            </div>
+                            <div class="cabinImageList">
+                              <img id="firstClassImg5" class="img-fluid smallImage smallImageActive"
+                                src="{{ url_for('static', filename='assets/images/first1.jpg')}}" alt="" onclick="enlargeFirstImage2(this)">
+                              <img id="firstClassImg6" class="img-fluid smallImage" src="{{ url_for('static', filename='assets/images/first2.jpg')}}" alt=""
+                                onclick="enlargeFirstImage2(this)">
+                              <img id="firstClassImg7" class="img-fluid smallImage" src="{{ url_for('static', filename='assets/images/first3.jpg')}}" alt=""
+                                onclick="enlargeFirstImage2(this)">
+                              <img id="firstClassImg8" class="img-fluid smallImage" src="{{ url_for('static', filename='assets/images/first4.jpg')}}" alt=""
+                                onclick="enlargeFirstImage2(this)">
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sliderContainer col-lg-6">
+                      <div class="sliderPrice text-center">
+                        <h6>MYR <span id="biddingPrice2">700</span></h6>
+                      </div>
+                      <div class="sliderRangeContainer text-center d-flex justify-content-between align-items-center">
+                        <p>No offer</p>
+                        <div class="sliderTootipContainer w-100">
+                          <input id="slider2" class="rangeSlider2" type="range" min="0" max="100" data-step="1" value="0">
+                          <div class="sliderTooltip2" id="biddingTooltip2">BID</div>
+                        </div>
+                        <p>MYR 1100</p>
+                        <div class="toolTipContainer">
+                          <i class="fas fa-info-circle" id="tool"></i>
+                          <div class="tooltipText">Confirm your upgrade class after paying the amount</div>
+                        </div>
+                      </div>
+                      <div class="slideText text-center">
+                        <p class="colorType4">
+                          <i class="fas fa-chevron-right colorType6"></i>
+                          <i class="fas fa-chevron-right colorType7"></i>
+                          <i class="fas fa-chevron-right colorType8"></i>
+                          <i class="fas fa-chevron-right colorType9"></i>
+                          Slide till the end for instant confirmation
+                        </p>
+                      </div>
+                    </div>
+                    <div class="meterContainer col-lg-3">
+                      <div class="d-flex justify-content-between align-items-center ">
+                        <p id="biddingText2" style="color: red;">Bidding</p>
+                        <div id="wrapper">
+                          <svg id="meter">
+                            <circle id="outline_curves" class="circle outline" cx="50%" cy="50%"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#f7494f" stroke-width="60"
+                              stroke-dasharray="95, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#f7794c" stroke-width="60"
+                              stroke-dasharray="81, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#fbb03b" stroke-width="60"
+                              stroke-dasharray="67, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#dee35a" stroke-width="60"
+                              stroke-dasharray="54, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#a2d55f" stroke-width="60"
+                              stroke-dasharray="41, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#59bc67" stroke-width="60"
+                              stroke-dasharray="27, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#15ad5d" stroke-width="60"
+                              stroke-dasharray="14, 189" fill="none"></circle>
+
+
+                            <circle id="mask2" class="circle" cx="50%" cy="50%"></circle>
+
+
+                            <circle id="outline_ends" class="circle outline" cx="50%" cy="50%"></circle>
+                          </svg>
+                          <img id="meter_needle2" src="{{ url_for('static', filename='assets/images/svg-meter-gauge-needle.svg')}}" alt="">
+                          <!-- <input id="slider" type="range" min="0" max="100" value="0" />
+                        <label id="lbl" id="value" for="">0</label> -->
+                        </div>
+                        <p id="confirmText2" style="color: gray;">Confirm</p>
+                      </div>
+                      <div class="offeredContainer text-center">
+                        <p>Offered Strength</p>
+                        <h5 id="lowMediumConfirm2">LOW</h5>
+                      </div>
+                      <div class="toolTipContainer meterTooltip">
+                        <i class="fas fa-info-circle" id="tool"></i>
+                        <div class="tooltipText">Offer Strength confirmation chances</div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="secondPassenger">
+              <div class="passengerContainer bgType4">
+                <div class="passengerName">
+                  <p class="subNames">Passenger Name 2:</p>
+                  <h4 class="colorType3">Miss Pot</h4>
+                </div>
+                <div class="travelDetails">
+                  <div class="travelOption">
+                    <label class="subNames"> Travelling: </label>
+                    <input type="radio" name="travel" id="onward" /><label class="subNames"
+                      id="radioName">Onward</label>
+                    <input type="radio" name="travel" id="onward" /><label class="subNames"
+                      id="radioName">Return</label>
+                  </div>
+                  <div class="cityNames">
+                    <label class="cityName">(BOM)</label>
+                    <label>---<i class="fas fa-plane planeIcon"></i></label>
+                    <label class="cityName">(KUL)</label>
+                    <label>---<i class="fas fa-plane planeIcon"></i></label>
+                    <label class="cityName">(SYD)</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="firstCity">
+                <div class="flightDetailsContainer">
+                  <div class="flightOD col-6">
+                    <div class="checkBoxContainer">
+                      <input type="checkbox" name="" id="bomKulCheckBox2" onclick="bomKul2()" />
+                    </div>
+                    <div class="citiesContainer">
+                      <div class="city">
+                        <p>Mumbai</p>
+                        <p class="colorType4">(BOM)</p>
+                      </div>
+                      <div class="timeDate text-center">
+                        <label>5hr 10m</label>
+                        <label>- - - - - - - - - -
+                          <i class="fas fa-plane planeIcon"></i></label>
+                        <label>10 Jan 2021</label>
+                      </div>
+                      <div class="city toCity">
+                        <p>Kuala Lampur</p>
+                        <p class="colorType4">(KUL)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="airways col-2">
+                    <p class="colorType4 flightHeading">Airways</p>
+                    <p class="flightValue">Malaysia Airlines</p>
+                  </div>
+                  <div class="flightName col-2">
+                    <p class="colorType4 flightHeading">Flight Name</p>
+                    <p class="flightValue">Flight MH195</p>
+                  </div>
+                  <div class="flightClass col-2">
+                    <p class="colorType4 flightHeading">Class</p>
+                    <p class="flightValue">Economy</p>
+                  </div>
+                </div>
+                <div class="biddingSection">
+                  <div class="row">
+                    <div class="upgradeType col-lg-3">
+                      <p>Select Upgrade Type</p>
+                      <div class="selectContainer" id="p2">
+                        <p id="selectClass2">Select Class</p>
+                        <div class="downArrow">
+                          <i class="fa fa-angle-down" id="arrowIcon2"></i>
+                        </div>
+                      </div>
+                      <div class="upgradeTypeList" id="list2">
+                        <p id="selectBusiness2"><i class="fas fa-briefcase"></i>Business Class</p>
+                        <p id="selectFirst2"><i class="fas fa-chair"></i>First Class</p>
+                      </div>
+
+                      <!-- <select class="form-select" aria-label="Default select example">
+                        <option value="">Select Class</option>
+                        <option value="Business">
+                          <p><i class="fas fa-briefcase"></i>Business Class</p>
+                        </option>
+                        <option value="First">
+                          <p><i class="fas fa-chair"></i>First Class</p>
+                        </option>
+                      </select> -->
+
+                      <div class="viewCabin">
+                        <label class="showCabin" id="showCabin3">View cabin</label>
+
+                        <div class="cabinImageContainer bgType3" id="cabinImageContainer3">
+                          <div><i class="fas fa-times colorType5 closeBtn" id="closeCabin3"></i></div>
+                          <div class="cabinHeading text-center">
+                            <h3 class="businessClass cabinHeadingActive" id="businessClass3">Business Class</h3>
+                            <h3 class="firstClass" id="firstClass3">First Class</h3>
+                          </div>
+                          <div class="businessClassImages" id="businessClassImages3">
+                            <div class="cabinLargeImage mt-3">
+                              <img id="largeBusinessImage3" class="img-fluid largeImage"
+                                src="{{ url_for('static', filename='assets/images/business1.jpg')}}" alt="">
+                            </div>
+                            <div class="cabinImageList">
+                              <img id="businessImg9" class="img-fluid smallImage smallImageActive"
+                                src="{{ url_for('static', filename='assets/images/business1.jpg')}}" alt="" onclick="enlargeBusinessImage3(this)">
+                              <img id="businessImg10" class="img-fluid smallImage" src="{{ url_for('static', filename='assets/images/business2.jpg')}}"
+                                alt="" onclick="enlargeBusinessImage3(this)">
+                              <img id="businessImg11" class="img-fluid smallImage" src="{{ url_for('static', filename='assets/images/business3.jpg')}}"
+                                alt="" onclick="enlargeBusinessImage3(this)()">
+                              <img id="businessImg12" class="img-fluid smallImage" src="{{ url_for('static', filename='assets/images/business4.jpg')}}"
+                                alt="" onclick="enlargeBusinessImage3(this)()">
+                            </div>
+                          </div>
+
+                          <div class="firstClassImages" id="firstClassImages3">
+                            <div class="cabinLargeImage mt-3">
+                              <img id="largeFirstImage3" class="img-fluid largeImage" src="{{ url_for('static', filename='assets/images/first1.jpg')}}"
+                                alt="">
+                            </div>
+                            <div class="cabinImageList">
+                              <img id="firstClassImg9" class="img-fluid smallImage smallImageActive"
+                                src="{{ url_for('static', filename='assets/images/first1.jpg')}}" alt="" onclick="enlargeFirstImage3(this)">
+                              <img id="firstClassImg10" class="img-fluid smallImage" src="{{ url_for('static', filename='assets/images/first2.jpg')}}"
+                                alt="" onclick="enlargeFirstImage3(this)">
+                              <img id="firstClassImg11" class="img-fluid smallImage" src="{{ url_for('static', filename='assets/images/first3.jpg')}}"
+                                alt="" onclick="enlargeFirstImage3(this)">
+                              <img id="firstClassImg12" class="img-fluid smallImage" src="{{ url_for('static', filename='assets/images/first4.jpg')}}"
+                                alt="" onclick="enlargeFirstImage3(this)">
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sliderContainer col-lg-6">
+                      <div class="sliderPrice text-center">
+                        <h6>MYR <span id="biddingPrice3">600</span></h6>
+                      </div>
+                      <div class="sliderRangeContainer text-center d-flex justify-content-between align-items-center">
+                        <p>No offer</p>
+                        <div class="sliderTootipContainer w-100">
+                          <input id="slider3" class="rangeSlider3" type="range" min="0" max="100" data-step="1" value="0">
+                          <div class="sliderTooltip3" id="biddingTooltip3">BID</div>
+                        </div>
+                        
+                        <p>MYR 1000</p>
+                        <div class="toolTipContainer">
+                          <i class="fas fa-info-circle" id="tool"></i>
+                          <div class="tooltipText">Confirm your upgrade class after paying the amount</div>
+                        </div>
+                      </div>
+                      <div class="slideText text-center">
+                        <p class="colorType4">
+                          <i class="fas fa-chevron-right colorType6"></i>
+                          <i class="fas fa-chevron-right colorType7"></i>
+                          <i class="fas fa-chevron-right colorType8"></i>
+                          <i class="fas fa-chevron-right colorType9"></i>
+                          Slide till the end for instant confirmation
+                        </p>
+                      </div>
+                    </div>
+                    <div class="meterContainer col-lg-3">
+                      <div class=" d-flex justify-content-between align-items-center ">
+                        <p id="biddingText3" style="color: red;">Bidding</p>
+                        <div id="wrapper">
+                          <svg id="meter">
+                            <circle id="outline_curves" class="circle outline" cx="50%" cy="50%"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#f7494f" stroke-width="60"
+                              stroke-dasharray="95, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#f7794c" stroke-width="60"
+                              stroke-dasharray="81, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#fbb03b" stroke-width="60"
+                              stroke-dasharray="67, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#dee35a" stroke-width="60"
+                              stroke-dasharray="54, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#a2d55f" stroke-width="60"
+                              stroke-dasharray="41, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#59bc67" stroke-width="60"
+                              stroke-dasharray="27, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#15ad5d" stroke-width="60"
+                              stroke-dasharray="14, 189" fill="none"></circle>
+
+
+                            <circle id="mask3" class="circle" cx="50%" cy="50%"></circle>
+
+
+                            <circle id="outline_ends" class="circle outline" cx="50%" cy="50%"></circle>
+                          </svg>
+                          <img id="meter_needle3" src="{{ url_for('static', filename='assets/images/svg-meter-gauge-needle.svg')}}" alt="">
+                          <!-- <input id="slider" type="range" min="0" max="100" value="0" />
+                        <label id="lbl" id="value" for="">0</label> -->
+                        </div>
+                        <p id="confirmText3" style="color: gray;">Confirm</p>
+                      </div>
+                      <div class="offeredContainer text-center">
+                        <p>Offered Strength</p>
+                        <h5 id="lowMediumConfirm3">LOW</h5>
+                      </div>
+                      <div class="toolTipContainer meterTooltip">
+                        <i class="fas fa-info-circle" id="tool"></i>
+                        <div class="tooltipText">Offer Strength confirmation chances</div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="secondCity">
+                <div class="flightDetailsContainer">
+                  <div class="flightOD col-6">
+                    <div class="checkBoxContainer">
+                      <input type="checkbox" name="" id="kulSydCheckBox2" onclick="kulSyd2()" />
+                    </div>
+                    <div class="citiesContainer">
+                      <div class="city">
+                        <p>Kuala Lumpur</p>
+                        <p class="colorType4">(KUL)</p>
+                      </div>
+                      <div class="timeDate text-center">
+                        <label>8hr 20m</label>
+                        <label>- - - - - - - - - -
+                          <i class="fas fa-plane planeIcon"></i></label>
+                        <label>10 Jan 2021</label>
+                      </div>
+                      <div class="city toCity">
+                        <p>Sydney</p>
+                        <p class="colorType4">(SYD)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="airways col-2">
+                    <p class="colorType4 flightHeading">Airways</p>
+                    <p class="flightValue">Malaysia Airlines</p>
+                  </div>
+                  <div class="flightName col-2">
+                    <p class="colorType4 flightHeading">Flight Name</p>
+                    <p class="flightValue">Flight MH0141</p>
+                  </div>
+                  <div class="flightClass col-2">
+                    <p class="colorType4 flightHeading">Class</p>
+                    <p class="flightValue">Economy</p>
+                  </div>
+                </div>
+                <div class="biddingSection">
+                  <div class="row">
+                    <div class="upgradeType col-lg-3">
+                      <p>Offered Upgrade Type</p>
+                      <div class="selectContainer">
+                        <p>
+                          First Class
+                        </p>
+                        <!-- <div class="downArrow">
+                    <i class="fa fa-angle-down"></i>
+                   </div> -->
+                      </div>
+                      <div class="viewCabin">
+                        <label class="showCabin" id="showCabin4">View cabin</label>
+
+                        <div class="cabinImageContainer bgType3" id="cabinImageContainer4">
+                          <div><i class="fas fa-times colorType5 closeBtn" id="closeCabin4"></i></div>
+                          <div class="cabinHeading text-center">
+                            <h3 class="businessClass cabinHeadingActive" id="businessClass4">Business Class</h3>
+                            <h3 class="firstClass" id="firstClass4">First Class</h3>
+                          </div>
+                          <div class="businessClassImages" id="businessClassImages4">
+                            <div class="cabinLargeImage mt-3">
+                              <img id="largeBusinessImage4" class="img-fluid largeImage"
+                                src="{{ url_for('static', filename='assets/images/business1.jpg')}}" alt="">
+                            </div>
+                            <div class="cabinImageList">
+                              <img id="businessImg13" class="img-fluid smallImage smallImageActive"
+                                src="{{ url_for('static', filename='assets/images/business1.jpg')}}" alt="" onclick="enlargeBusinessImage4(this)">
+                              <img id="businessImg14" class="img-fluid smallImage" src="{{ url_for('static', filename='assets/images/business2.jpg')}}"
+                                alt="" onclick="enlargeBusinessImage4(this)">
+                              <img id="businessImg15" class="img-fluid smallImage" src="{{ url_for('static', filename='assets/images/business3.jpg')}}"
+                                alt="" onclick="enlargeBusinessImage4(this)">
+                              <img id="businessImg16" class="img-fluid smallImage" src="{{ url_for('static', filename='assets/images/business4.jpg')}}"
+                                alt="" onclick="enlargeBusinessImage4(this)">
+                            </div>
+                          </div>
+
+                          <div class="firstClassImages" id="firstClassImages4">
+                            <div class="cabinLargeImage mt-3">
+                              <img id="largeFirstImage4" class="img-fluid largeImage" src="{{ url_for('static', filename='assets/images/first1.jpg')}}"
+                                alt="">
+                            </div>
+                            <div class="cabinImageList">
+                              <img id="firstClassImg13" class="img-fluid smallImage smallImageActive"
+                                src="{{ url_for('static', filename='assets/images/first1.jpg')}}" alt="" onclick="enlargeFirstImage4(this)">
+                              <img id="firstClassImg14" class="img-fluid smallImage" src="{{ url_for('static', filename='assets/images/first2.jpg')}}"
+                                alt="" onclick="enlargeFirstImage4(this)">
+                              <img id="firstClassImg15" class="img-fluid smallImage" src="{{ url_for('static', filename='assets/images/first3.jpg')}}"
+                                alt="" onclick="enlargeFirstImage4(this)">
+                              <img id="firstClassImg16" class="img-fluid smallImage" src="{{ url_for('static', filename='assets/images/first4.jpg')}}"
+                                alt="" onclick="enlargeFirstImage4(this)">
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sliderContainer col-lg-6">
+                      <div class="sliderPrice text-center">
+                        <h6>MYR <span id="biddingPrice4">700</span></h6>
+                      </div>
+                      <div class="sliderRangeContainer text-center d-flex justify-content-between align-items-center">
+                        <p>No offer</p>
+                        <div class="sliderTootipContainer w-100">
+                          <input id="slider4" class="rangeSlider4" type="range" min="0" max="100" data-step="1"
+                            value="0">
+                          <div class="sliderTooltip4" id="biddingTooltip4">BID</div>
+                        </div>
+                        <p>MYR 1100</p>
+                        <div class="toolTipContainer">
+                          <i class="fas fa-info-circle" id="tool"></i>
+                          <div class="tooltipText">Confirm your upgrade class after paying the amount</div>
+                        </div>
+                      </div>
+                      <div class="slideText text-center">
+                        <p class="colorType4">
+                          <i class="fas fa-chevron-right colorType6"></i>
+                          <i class="fas fa-chevron-right colorType7"></i>
+                          <i class="fas fa-chevron-right colorType8"></i>
+                          <i class="fas fa-chevron-right colorType9"></i>
+                          Slide till the end for instant confirmation
+                        </p>
+                      </div>
+                    </div>
+                    <div class="meterContainer col-lg-3">
+                      <div class=" d-flex justify-content-between align-items-center ">
+                        <p  id="biddingText4" style="color: red;">Bidding</p>
+                        <div id="wrapper">
+                          <svg id="meter">
+                            <circle id="outline_curves" class="circle outline" cx="50%" cy="50%"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#f7494f" stroke-width="60"
+                              stroke-dasharray="95, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#f7794c" stroke-width="60"
+                              stroke-dasharray="81, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#fbb03b" stroke-width="60"
+                              stroke-dasharray="67, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#dee35a" stroke-width="60"
+                              stroke-dasharray="54, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#a2d55f" stroke-width="60"
+                              stroke-dasharray="41, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#59bc67" stroke-width="60"
+                              stroke-dasharray="27, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#15ad5d" stroke-width="60"
+                              stroke-dasharray="14, 189" fill="none"></circle>
+
+
+                            <circle id="mask4" class="circle" cx="50%" cy="50%"></circle>
+
+
+                            <circle id="outline_ends" class="circle outline" cx="50%" cy="50%"></circle>
+                          </svg>
+
+                          <img id="meter_needle4" src="{{ url_for('static', filename='assets/images/svg-meter-gauge-needle.svg')}}" alt=""> 
+                          <!-- <input id="slider" type="range" min="0" max="100" value="0" />
+                        <label id="lbl" id="value" for="">0</label> -->
+                        </div>
+                        <p id="confirmText4" style="color: gray;">Confirm</p>
+                      </div>
+                      <div class="offeredContainer text-center">
+                        <p>Offered Strength</p>
+                        <h5 id="lowMediumConfirm4">LOW</h5>
+                      </div>
+                      <div class="toolTipContainer meterTooltip">
+                        <i class="fas fa-info-circle" id="tool"></i>
+                        <div class="tooltipText">Offer Strength confirmation chances</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ------------------------------------------------------Preferred Section Starts here -------------------------------------------------------- -->
+
+          <div class="preferredSeatContainer">
+            <div class="row">
+              <div class="travelDetails col-4" id="prefferedTravelDetails">
+                <div class="prefferredTravel bgType5">
+                  <div class="travelOption" id="prefferedTravelOption">
+                    <label class="subNames"> Travelling: </label>
+                    <input type="radio" name="travel" id="onward" /><label class="subNames"
+                      id="radioName">Onward</label>
+                    <input type="radio" name="travel" id="onward" /><label class="subNames"
+                      id="radioName">Return</label>
+                  </div>
+                  <div class="cityNames" id="prefferedCityNames">
+                    <label class="cityName">(BOM)</label>
+                    <label>---<i class="fas fa-plane planeIcon"></i></label>
+                    <label class="cityName">(KUL)</label>
+                    <label>---<i class="fas fa-plane planeIcon"></i></label>
+                    <label class="cityName">(SYD)</label>
+                  </div>
+
+                </div>
+                <div class="passengerData1">
+                  <div class="citiesContainer bgType6">
+                    <div class="city">
+                      <p>Mumbai</p>
+                      <p class="colorType4">(BOM)</p>
+                    </div>
+                    <div class="timeDate text-center">
+                      <label>5hr 10m</label>
+                      <label>- - - - - - - - - -
+                        <i class="fas fa-plane planeIcon"></i></label>
+                      <label>10 Jan 2021</label>
+                    </div>
+                    <div class="city toCity">
+                      <p>Kuala Lampur</p>
+                      <p class="colorType4">(KUL)</p>
+                    </div>
+                  </div>
+
+                  <div class="preferredPassengerDetails">
+                    <div class="preferredPassengerHead">
+                      <p>PASSENGER NAME</p>
+                      <p>SEAT</p>
+                    </div>
+                    <div class="preferredPassengerName">
+                      <p class="colorType1">Robert Downey</p>
+                      <p>Not Selected</p>
+                    </div>
+                    <div class="preferredPassengerName">
+                      <p>Miss Pot</p>
+                      <p class="colorType2">Select Seat</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="passengerData2 ">
+                  <div class="citiesContainer bgType10" id="prefferedCitiesContainer">
+                    <div class="city">
+                      <p>Kuala Lumpur</p>
+                      <p class="colorType4">(KUL)</p>
+                    </div>
+                    <div class="timeDate text-center">
+                      <label>8hr 20m</label>
+                      <label>- - - - - - - - - -
+                        <i class="fas fa-plane planeIcon"></i></label>
+                      <label>10 Jan 2021</label>
+                    </div>
+                    <div class="city toCity">
+                      <p>Sydney</p>
+                      <p class="colorType4">(SYD)</p>
+                    </div>
+                  </div>
+                  <div class="preferredPassengerDetails bgType10" id="arrow">
+                    <div class="preferredPassengerHead">
+                      <p>PASSENGER NAME</p>
+                      <p>SEAT</p>
+                    </div>
+                    <div class="preferredPassengerName">
+                      <p>Robert Downey</p>
+                      <p class="colorType2">Select Seat</p>
+                    </div>
+                    <div class="preferredPassengerName">
+                      <p>Miss Pot</p>
+                      <p class="colorType2">Select Seat</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="planeContainer col-8">
+
+                <div class="seatTypeImageContainer">
+                  <p>SEAT MAP</p>
+                  <div class="seatTypeImage">
+                    <svg version="1.1" id="freeSeat" xmlns="http://www.w3.org/2000/svg" x="0" y="0"
+                      viewBox="0 0 52.9 56" style="enable-background:new 0 0 52.9 56" xml:space="preserve">
+                      <style>
+                        .freeSeat {
+                          fill: #61666f
+                        }
+                      </style>
+                      <path class="freeSeat"
+                        d="M6 45.4c-1.2 0-2.1-.9-2.1-2.1V27.5c0-1.2.9-2.1 2.1-2.1h2.9v-3H4.6c-2 0-3.7 1.6-3.7 3.7v18.8c0 2 1.6 3.7 3.7 3.7h4.3v-3.2H6zM48.3 22.4H44v3h2.9c1.2 0 2.1.9 2.1 2.1v15.8c0 1.2-.9 2.1-2.1 2.1H44v3.2h4.3c2 0 3.7-1.6 3.7-3.7V26c-.1-2-1.7-3.6-3.7-3.6z" />
+                      <g>
+                        <path class="freeSeat"
+                          d="M35.4 10.5c2.2 0 4.1 1.8 4.1 4.1v30.9h-26V14.6c0-2.2 1.8-4.1 4.1-4.1h17.8m0-3H17.5c-3.9 0-7.1 3.2-7.1 7.1v33.9h32V14.6c0-3.9-3.1-7.1-7-7.1z" />
+                        <path d="M35.4 10.5c2.2 0 4.1 1.8 4.1 4.1v30.9h-26V14.6c0-2.2 1.8-4.1 4.1-4.1h17.8"
+                          style="fill:#f8f8f8" />
+                      </g>
+                    </svg>
+
+                    <p>Free</p>
+                  </div>
+                  <div class="seatTypeImage">
+
+                    <!-- <img id="blockedSeat" class="seatImage img-fluid" src="./static/img/Seat.svg" alt="" width="25px" height="25px" fill="#b4dcff"> -->
+
+                    <svg version="1.1" id="blockedSeat" xmlns="http://www.w3.org/2000/svg" x="0" y="0"
+                      viewBox="0 0 52.9 56" style="enable-background:new 0 0 52.9 56" xml:space="preserve">
+                      <style>
+                        .blockedSeat {
+                          fill: #b4dcff;
+                        }
+                      </style>
+                      <path class="blockedSeat"
+                        d="M6 45.4c-1.2 0-2.1-.9-2.1-2.1V27.5c0-1.2.9-2.1 2.1-2.1h2.9v-3H4.6c-2 0-3.7 1.6-3.7 3.7v18.8c0 2 1.6 3.7 3.7 3.7h4.3v-3.2H6zM48.3 22.4H44v3h2.9c1.2 0 2.1.9 2.1 2.1v15.8c0 1.2-.9 2.1-2.1 2.1H44v3.2h4.3c2 0 3.7-1.6 3.7-3.7V26c-.1-2-1.7-3.6-3.7-3.6z" />
+                      <g>
+                        <path class="blockedSeat"
+                          d="M35.4 10.5c2.2 0 4.1 1.8 4.1 4.1v30.9h-26V14.6c0-2.2 1.8-4.1 4.1-4.1h17.8m0-3H17.5c-3.9 0-7.1 3.2-7.1 7.1v33.9h32V14.6c0-3.9-3.1-7.1-7-7.1z" />
+                        <path d="M35.4 10.5c2.2 0 4.1 1.8 4.1 4.1v30.9h-26V14.6c0-2.2 1.8-4.1 4.1-4.1h17.8"
+                          style="fill:#b4dcff" />
+                      </g>
+                    </svg>
+
+
+
+                    <p>Seat @ MYR 40</p>
+                  </div>
+                  <div class="seatTypeImage">
+
+                    <svg version="1.1" id="availableSeat" xmlns="http://www.w3.org/2000/svg" x="0" y="0"
+                      viewBox="0 0 52.9 56" style="enable-background:new 0 0 52.9 56" xml:space="preserve">
+                      <style>
+                        .availableSeat {
+                          fill: #61b2fc;
+                        }
+                      </style>
+                      <path class="availableSeat"
+                        d="M6 45.4c-1.2 0-2.1-.9-2.1-2.1V27.5c0-1.2.9-2.1 2.1-2.1h2.9v-3H4.6c-2 0-3.7 1.6-3.7 3.7v18.8c0 2 1.6 3.7 3.7 3.7h4.3v-3.2H6zM48.3 22.4H44v3h2.9c1.2 0 2.1.9 2.1 2.1v15.8c0 1.2-.9 2.1-2.1 2.1H44v3.2h4.3c2 0 3.7-1.6 3.7-3.7V26c-.1-2-1.7-3.6-3.7-3.6z" />
+                      <g>
+                        <path class="availableSeat"
+                          d="M35.4 10.5c2.2 0 4.1 1.8 4.1 4.1v30.9h-26V14.6c0-2.2 1.8-4.1 4.1-4.1h17.8m0-3H17.5c-3.9 0-7.1 3.2-7.1 7.1v33.9h32V14.6c0-3.9-3.1-7.1-7-7.1z" />
+                        <path d="M35.4 10.5c2.2 0 4.1 1.8 4.1 4.1v30.9h-26V14.6c0-2.2 1.8-4.1 4.1-4.1h17.8"
+                          style="fill:#61b2fc" />
+                      </g>
+                    </svg>
+                    <p>Seat @ MYR 50</p>
+                  </div>
+                  <div class="seatTypeImage">
+                    <svg version="1.1" id="bookedSeat" xmlns="http://www.w3.org/2000/svg" x="0" y="0"
+                      viewBox="0 0 52.9 56" style="enable-background:new 0 0 52.9 56" xml:space="preserve">
+                      <style>
+                        .bookedSeat {
+                          fill: #726cff;
+                        }
+                      </style>
+                      <path class="bookedSeat"
+                        d="M6 45.4c-1.2 0-2.1-.9-2.1-2.1V27.5c0-1.2.9-2.1 2.1-2.1h2.9v-3H4.6c-2 0-3.7 1.6-3.7 3.7v18.8c0 2 1.6 3.7 3.7 3.7h4.3v-3.2H6zM48.3 22.4H44v3h2.9c1.2 0 2.1.9 2.1 2.1v15.8c0 1.2-.9 2.1-2.1 2.1H44v3.2h4.3c2 0 3.7-1.6 3.7-3.7V26c-.1-2-1.7-3.6-3.7-3.6z" />
+                      <g>
+                        <path class="bookedSeat"
+                          d="M35.4 10.5c2.2 0 4.1 1.8 4.1 4.1v30.9h-26V14.6c0-2.2 1.8-4.1 4.1-4.1h17.8m0-3H17.5c-3.9 0-7.1 3.2-7.1 7.1v33.9h32V14.6c0-3.9-3.1-7.1-7-7.1z" />
+                        <path d="M35.4 10.5c2.2 0 4.1 1.8 4.1 4.1v30.9h-26V14.6c0-2.2 1.8-4.1 4.1-4.1h17.8"
+                          style="fill:#726cff" />
+                      </g>
+                    </svg>
+                    <p>Seat @ MYR 60</p>
+                  </div>
+                  <div class="seatTypeImage">
+                    <svg version="1.1" id="assignedSeat" xmlns="http://www.w3.org/2000/svg" x="0" y="0"
+                      viewBox="0 0 52.9 56" style="enable-background:new 0 0 52.9 56" xml:space="preserve">
+                      <style>
+                        .assignedSeat {
+                          fill: #e5e5e5;
+                        }
+                      </style>
+                      <path class="assignedSeat"
+                        d="M6 45.4c-1.2 0-2.1-.9-2.1-2.1V27.5c0-1.2.9-2.1 2.1-2.1h2.9v-3H4.6c-2 0-3.7 1.6-3.7 3.7v18.8c0 2 1.6 3.7 3.7 3.7h4.3v-3.2H6zM48.3 22.4H44v3h2.9c1.2 0 2.1.9 2.1 2.1v15.8c0 1.2-.9 2.1-2.1 2.1H44v3.2h4.3c2 0 3.7-1.6 3.7-3.7V26c-.1-2-1.7-3.6-3.7-3.6z" />
+                      <g>
+                        <path class="assignedSeat"
+                          d="M35.4 10.5c2.2 0 4.1 1.8 4.1 4.1v30.9h-26V14.6c0-2.2 1.8-4.1 4.1-4.1h17.8m0-3H17.5c-3.9 0-7.1 3.2-7.1 7.1v33.9h32V14.6c0-3.9-3.1-7.1-7-7.1z" />
+                        <path d="M35.4 10.5c2.2 0 4.1 1.8 4.1 4.1v30.9h-26V14.6c0-2.2 1.8-4.1 4.1-4.1h17.8"
+                          style="fill:#e5e5e5" />
+                      </g>
+                    </svg>
+                    <p>Assigned</p>
+                  </div>
+                  <div class="seatTypeImage">
+                    <svg version="1.1" id="selectedSeat" xmlns="http://www.w3.org/2000/svg" x="0" y="0"
+                      viewBox="0 0 52.9 56" style="enable-background:new 0 0 52.9 56" xml:space="preserve">
+                      <style>
+                        .selectedSeat {
+                          fill: #219f0b;
+                        }
+                      </style>
+                      <path class="selectedSeat"
+                        d="M6 45.4c-1.2 0-2.1-.9-2.1-2.1V27.5c0-1.2.9-2.1 2.1-2.1h2.9v-3H4.6c-2 0-3.7 1.6-3.7 3.7v18.8c0 2 1.6 3.7 3.7 3.7h4.3v-3.2H6zM48.3 22.4H44v3h2.9c1.2 0 2.1.9 2.1 2.1v15.8c0 1.2-.9 2.1-2.1 2.1H44v3.2h4.3c2 0 3.7-1.6 3.7-3.7V26c-.1-2-1.7-3.6-3.7-3.6z" />
+                      <g>
+                        <path class="selectedSeat"
+                          d="M35.4 10.5c2.2 0 4.1 1.8 4.1 4.1v30.9h-26V14.6c0-2.2 1.8-4.1 4.1-4.1h17.8m0-3H17.5c-3.9 0-7.1 3.2-7.1 7.1v33.9h32V14.6c0-3.9-3.1-7.1-7-7.1z" />
+                        <path d="M35.4 10.5c2.2 0 4.1 1.8 4.1 4.1v30.9h-26V14.6c0-2.2 1.8-4.1 4.1-4.1h17.8"
+                          style="fill:#219f0b" />
+                      </g>
+                    </svg>
+                    <p>Selected</p>
+                  </div>
+                </div>
+                <div class="planeImageContainer">
+                  <img class="img-fluid planeImage" src="{{ url_for('static',filename='assets/images/Plane V2.svg')}}"></img>
+                  <div class="planeSeatContainer w-70 m-auto text-center">
+                    <p>FRONT</p>
+                    <div class="abcdefContainer d-flex justify-content-between mt-3">
+                      <div class="abcRow d-flex justify-content-around w-100">
+                        <p>A</p>
+                        <p>B</p>
+                        <p>C</p>
+                      </div>
+                      <div class="defRow d-flex justify-content-around w-100">
+                        <p>D</p>
+                        <p>E</p>
+                        <p>F</p>
+                      </div>
+                    </div>
+
+
+                    
+                    <div class="seatRowContainer mt-2 text-center">
+                      <div class="rowContainer justify-content-between align-items-center my-2">
+                        <div class="row1Left justify-content-between w-100">
+                          <svg  version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 52.9 56" onclick = "changeColor(this)" class="seatOccupied"
+                            style="enable-background:new 0 0 52.9 56" xml:space="preserve">
+
+                            <path class="seatOccupied"
+                              d="M6 45.4c-1.2 0-2.1-.9-2.1-2.1V27.5c0-1.2.9-2.1 2.1-2.1h2.9v-3H4.6c-2 0-3.7 1.6-3.7 3.7v18.8c0 2 1.6 3.7 3.7 3.7h4.3v-3.2H6zM48.3 22.4H44v3h2.9c1.2 0 2.1.9 2.1 2.1v15.8c0 1.2-.9 2.1-2.1 2.1H44v3.2h4.3c2 0 3.7-1.6 3.7-3.7V26c-.1-2-1.7-3.6-3.7-3.6z" />
+                            <g>
+                              <path class="seatOccupied"
+                                d="M35.4 10.5c2.2 0 4.1 1.8 4.1 4.1v30.9h-26V14.6c0-2.2 1.8-4.1 4.1-4.1h17.8m0-3H17.5c-3.9 0-7.1 3.2-7.1 7.1v33.9h32V14.6c0-3.9-3.1-7.1-7-7.1z" />
+                              <path class="seatOccupied"
+                                d="M35.4 10.5c2.2 0 4.1 1.8 4.1 4.1v30.9h-26V14.6c0-2.2 1.8-4.1 4.1-4.1h17.8" />
+                            </g>
+                          </svg>
+                          <svg  version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 52.9 56" onclick = "changeColor(this)" class=""
+                            style="enable-background:new 0 0 52.9 56" xml:space="preserve">
+
+                            <path class="seatOccupied3"
+                              d="M6 45.4c-1.2 0-2.1-.9-2.1-2.1V27.5c0-1.2.9-2.1 2.1-2.1h2.9v-3H4.6c-2 0-3.7 1.6-3.7 3.7v18.8c0 2 1.6 3.7 3.7 3.7h4.3v-3.2H6zM48.3 22.4H44v3h2.9c1.2 0 2.1.9 2.1 2.1v15.8c0 1.2-.9 2.1-2.1 2.1H44v3.2h4.3c2 0 3.7-1.6 3.7-3.7V26c-.1-2-1.7-3.6-3.7-3.6z" />
+                            <g>
+                              <path class="seatOccupied3"
+                                d="M35.4 10.5c2.2 0 4.1 1.8 4.1 4.1v30.9h-26V14.6c0-2.2 1.8-4.1 4.1-4.1h17.8m0-3H17.5c-3.9 0-7.1 3.2-7.1 7.1v33.9h32V14.6c0-3.9-3.1-7.1-7-7.1z" />
+                              <path class="seatOccupied3"
+                                d="M35.4 10.5c2.2 0 4.1 1.8 4.1 4.1v30.9h-26V14.6c0-2.2 1.8-4.1 4.1-4.1h17.8" />
+                            </g>
+                          </svg>
+                          <svg  version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 52.9 56" onclick = "changeColor(this)" class=""
+                            style="enable-background:new 0 0 52.9 56" xml:space="preserve">
+
+                            <path class="seatAssigned"
+                              d="M6 45.4c-1.2 0-2.1-.9-2.1-2.1V27.5c0-1.2.9-2.1 2.1-2.1h2.9v-3H4.6c-2 0-3.7 1.6-3.7 3.7v18.8c0 2 1.6 3.7 3.7 3.7h4.3v-3.2H6zM48.3 22.4H44v3h2.9c1.2 0 2.1.9 2.1 2.1v15.8c0 1.2-.9 2.1-2.1 2.1H44v3.2h4.3c2 0 3.7-1.6 3.7-3.7V26c-.1-2-1.7-3.6-3.7-3.6z" />
+                            <g>
+                              <path class="seatAssigned"
+                                d="M35.4 10.5c2.2 0 4.1 1.8 4.1 4.1v30.9h-26V14.6c0-2.2 1.8-4.1 4.1-4.1h17.8m0-3H17.5c-3.9 0-7.1 3.2-7.1 7.1v33.9h32V14.6c0-3.9-3.1-7.1-7-7.1z" />
+                              <path class="seatAssigned"
+                                d="M35.4 10.5c2.2 0 4.1 1.8 4.1 4.1v30.9h-26V14.6c0-2.2 1.8-4.1 4.1-4.1h17.8" />
+                            </g>
+                          </svg>
+                        </div>
+                        <div class="rowNumber"></div>
+                        <div class="row1Right justify-content-between w-100">
+                          <svg  version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 52.9 56" onclick = "changeColor(this)" class=""
+                            style="enable-background:new 0 0 52.9 56" xml:space="preserve">
+
+                            <path class="freeSeat1"
+                              d="M6 45.4c-1.2 0-2.1-.9-2.1-2.1V27.5c0-1.2.9-2.1 2.1-2.1h2.9v-3H4.6c-2 0-3.7 1.6-3.7 3.7v18.8c0 2 1.6 3.7 3.7 3.7h4.3v-3.2H6zM48.3 22.4H44v3h2.9c1.2 0 2.1.9 2.1 2.1v15.8c0 1.2-.9 2.1-2.1 2.1H44v3.2h4.3c2 0 3.7-1.6 3.7-3.7V26c-.1-2-1.7-3.6-3.7-3.6z" />
+                            <g>
+                              <path class="freeSeat2"
+                                d="M35.4 10.5c2.2 0 4.1 1.8 4.1 4.1v30.9h-26V14.6c0-2.2 1.8-4.1 4.1-4.1h17.8m0-3H17.5c-3.9 0-7.1 3.2-7.1 7.1v33.9h32V14.6c0-3.9-3.1-7.1-7-7.1z" />
+                              <path class="path"
+                                d="M35.4 10.5c2.2 0 4.1 1.8 4.1 4.1v30.9h-26V14.6c0-2.2 1.8-4.1 4.1-4.1h17.8" />
+                            </g>
+                          </svg>
+                          <svg  version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 52.9 56" onclick = "changeColor(this)" class=""
+                            style="enable-background:new 0 0 52.9 56" xml:space="preserve">
+
+                            <path class="freeSeat1"
+                              d="M6 45.4c-1.2 0-2.1-.9-2.1-2.1V27.5c0-1.2.9-2.1 2.1-2.1h2.9v-3H4.6c-2 0-3.7 1.6-3.7 3.7v18.8c0 2 1.6 3.7 3.7 3.7h4.3v-3.2H6zM48.3 22.4H44v3h2.9c1.2 0 2.1.9 2.1 2.1v15.8c0 1.2-.9 2.1-2.1 2.1H44v3.2h4.3c2 0 3.7-1.6 3.7-3.7V26c-.1-2-1.7-3.6-3.7-3.6z" />
+                            <g>
+                              <path class="freeSeat2"
+                                d="M35.4 10.5c2.2 0 4.1 1.8 4.1 4.1v30.9h-26V14.6c0-2.2 1.8-4.1 4.1-4.1h17.8m0-3H17.5c-3.9 0-7.1 3.2-7.1 7.1v33.9h32V14.6c0-3.9-3.1-7.1-7-7.1z" />
+                              <path class="path"
+                                d="M35.4 10.5c2.2 0 4.1 1.8 4.1 4.1v30.9h-26V14.6c0-2.2 1.8-4.1 4.1-4.1h17.8" />
+                            </g>
+                          </svg>
+                          <svg  version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 52.9 56" onclick = "changeColor(this)" class=""
+                            style="enable-background:new 0 0 52.9 56" xml:space="preserve">
+
+                            <path class="seseatOccupied2"
+                              d="M6 45.4c-1.2 0-2.1-.9-2.1-2.1V27.5c0-1.2.9-2.1 2.1-2.1h2.9v-3H4.6c-2 0-3.7 1.6-3.7 3.7v18.8c0 2 1.6 3.7 3.7 3.7h4.3v-3.2H6zM48.3 22.4H44v3h2.9c1.2 0 2.1.9 2.1 2.1v15.8c0 1.2-.9 2.1-2.1 2.1H44v3.2h4.3c2 0 3.7-1.6 3.7-3.7V26c-.1-2-1.7-3.6-3.7-3.6z" />
+                            <g>
+                              <path class="seseatOccupied2"
+                                d="M35.4 10.5c2.2 0 4.1 1.8 4.1 4.1v30.9h-26V14.6c0-2.2 1.8-4.1 4.1-4.1h17.8m0-3H17.5c-3.9 0-7.1 3.2-7.1 7.1v33.9h32V14.6c0-3.9-3.1-7.1-7-7.1z" />
+                              <path class="seseatOccupied2"
+                                d="M35.4 10.5c2.2 0 4.1 1.8 4.1 4.1v30.9h-26V14.6c0-2.2 1.8-4.1 4.1-4.1h17.8" />
+                            </g>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p class="mt-4">BACK</p>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+            </div>
+          </div>
+
+
+          <!------------------------------------------------------- Empty Seat Section Starts here--------------------------------------------------------- -->
+          <div class="passenger" id="emptySeatContainer">
+            <div class="firstPassenger">
+              <div class="passengerContainer">
+                <div class="passengerName">
+                  <p class="subNames">Passenger Name 1:</p>
+                  <h4 class="colorType3">Robert Downey</h4>
+                </div>
+                <div class="travelDetails">
+                  <div class="travelOption">
+                    <label class="subNames"> Travelling: </label>
+                    <input type="radio" name="travel" id="onward" /><label class="subNames"
+                      id="radioName">Onward</label>
+                    <input type="radio" name="travel" id="onward" /><label class="subNames"
+                      id="radioName">Return</label>
+                  </div>
+                  <div class="cityNames">
+                    <label class="cityName">(BOM)</label>
+                    <label>---<i class="fas fa-plane planeIcon"></i></label>
+                    <label class="cityName">(KUL)</label>
+                    <label>---<i class="fas fa-plane planeIcon"></i></label>
+                    <label class="cityName">(SYD)</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="firstCity">
+                <div class="flightDetailsContainer">
+                  <div class="flightOD col-6">
+                    <div class="checkBoxContainer">
+                      <input type="checkbox" name="" id="" />
+                    </div>
+                    <div class="citiesContainer">
+                      <div class="city">
+                        <p>Mumbai</p>
+                        <p class="colorType4">(BOM)</p>
+                      </div>
+                      <div class="timeDate text-center">
+                        <label>5hr 10m</label>
+                        <label>- - - - - - - - - -
+                          <i class="fas fa-plane planeIcon"></i></label>
+                        <label>10 Jan 2021</label>
+                      </div>
+                      <div class="city toCity">
+                        <p>Kuala Lampur</p>
+                        <p class="colorType4">(KUL)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="airways col-2">
+                    <p class="colorType4 flightHeading">Airways</p>
+                    <p class="flightValue">Malaysia Airlines</p>
+                  </div>
+                  <div class="flightName col-2">
+                    <p class="colorType4 flightHeading">Flight Name</p>
+                    <p class="flightValue">Flight MH195</p>
+                  </div>
+                  <div class="flightClass col-2">
+                    <p class="colorType4 flightHeading">Class</p>
+                    <p class="flightValue">Economy</p>
+                  </div>
+                </div>
+                <div class="biddingSection" id="seatBidding">
+                  <div class="row">
+                    <div class="upgradeType col-lg-3">
+                      <div class="seatCount">
+                        <div class="selectSeat">
+                          <label>Select <br> Empty Seat</label>
+                          <input type="radio" name="emptySeat" id="">
+                          <div class="seatIcons">
+                            <div class="icons d-flex justify-content-around">
+                              <i class="fas fa-clipboard colorType1"></i>
+                              <i class="fas fa-clipboard colorType1"></i>
+                              <i class="far fa-clipboard"></i>
+                            </div>
+                            <label>1 Empty Seats</label>
+                          </div>
+                        </div>
+                        <div class="viewSeat">
+                          <label class="colorType2" id="showCabin5">View Seat</label>
+                          <input type="radio" name="emptySeat" id="">
+                          <div class="seatIcons">
+                            <div class="icons d-flex justify-content-around">
+                              <i class="fas fa-clipboard colorType1"></i>
+                              <i class="far fa-clipboard"></i>
+                              <i class="far fa-clipboard"></i>
+                            </div>
+                            <label>2 Empty Seats</label>
+                          </div>
+
+                          <div class="cabinImageContainer bgType3" id="cabinImageContainer5">
+                            <div class="closeBtnContainer"><i class="fas fa-times colorType5 closeBtn"
+                                id="closeCabin5"></i></div>
+                            <div class="cabinHeading text-center">
+                              <h3 class="businessClass cabinHeadingActive" id="businessClass5">Two Empty Seat</h3>
+                              <h3 class="firstClass" id="firstClass5">One Empty Seat</h3>
+                            </div>
+                            <div class="businessClassImages" id="businessClassImages5">
+                              <div class="cabinLargeImage mt-3">
+                                <img class="img-fluid largeImage" id="largeBusinessImage5" src="{{ url_for('static',filename='assets/images/business1.jpg')}}" alt="">
+                              </div>
+                              <div class="cabinImageList">
+                                <img class="img-fluid smallImage smallImageActive" src="{{ url_for('static',filename='assets/images/business1.jpg')}}"
+                                  alt="" onclick="enlargeBusinessImage5(this)">
+                                <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/business2.jpg')}}" alt="" onclick="enlargeBusinessImage5(this)">
+                                <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/business3.jpg')}}" alt="" onclick="enlargeBusinessImage5(this)">
+                                <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/business4.jpg')}}" alt="" onclick="enlargeBusinessImage5(this)">
+                              </div>
+                            </div>
+
+                            <div class="firstClassImages" id="firstClassImages5">
+                              <div class="cabinLargeImage mt-3">
+                                <img class="img-fluid largeImage" id="largeFirstImage5" src="{{ url_for('static',filename='assets/images/first1.jpg')}}" alt="">
+                              </div>
+                              <div class="cabinImageList">
+                                <img class="img-fluid smallImage smallImageActive" src="{{ url_for('static',filename='assets/images/first1.jpg')}}" alt="" onclick="enlargeFirstImage5(this)">
+                                <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/first2.jpg')}}" alt="" onclick="enlargeFirstImage5(this)">
+                                <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/first3.jpg')}}" alt="" onclick="enlargeFirstImage5(this)">
+                                <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/first4.jpg')}}" alt="" onclick="enlargeFirstImage5(this)">
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sliderContainer col-lg-6">
+                      <div class="sliderPrice text-center">
+                        <h6>MYR <span id="biddingPrice5">200</span></h6>
+                      </div>
+                      <div class="sliderRangeContainer text-center d-flex justify-content-between align-items-center">
+                        <p>No offer</p>
+                        <input id="slider5" class="rangeSlider5" type="range" min="0" max="100" data-step="1" value="0">
+                        <p>MYR 400</p>
+                        <div class="toolTipContainer">
+                          <i class="fas fa-info-circle" id="tool"></i>
+                          <div class="tooltipText">Confirm your upgrade class after paying the amount</div>
+                        </div>
+                      </div>
+                      <div class="slideText text-center">
+                        <p class="colorType4">
+                          <i class="fas fa-chevron-right colorType6"></i>
+                          <i class="fas fa-chevron-right colorType7"></i>
+                          <i class="fas fa-chevron-right colorType8"></i>
+                          <i class="fas fa-chevron-right colorType9"></i>
+                          Slide till the end for instant confirmation
+                        </p>
+                      </div>
+                    </div>
+                    <div class="meterContainer col-lg-3">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <p style="color: red;">Bidding</p>
+                        <div id="wrapper">
+                          <svg id="meter">
+                            <circle id="outline_curves" class="circle outline" cx="50%" cy="50%"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#f7494f" stroke-width="60"
+                              stroke-dasharray="95, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#f7794c" stroke-width="60"
+                              stroke-dasharray="81, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#fbb03b" stroke-width="60"
+                              stroke-dasharray="67, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#dee35a" stroke-width="60"
+                              stroke-dasharray="54, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#a2d55f" stroke-width="60"
+                              stroke-dasharray="41, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#59bc67" stroke-width="60"
+                              stroke-dasharray="27, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#15ad5d" stroke-width="60"
+                              stroke-dasharray="14, 189" fill="none"></circle>
+
+
+                            <circle id="mask5" class="circle" cx="50%" cy="50%"></circle>
+
+
+                            <circle id="outline_ends" class="circle outline" cx="50%" cy="50%"></circle>
+                          </svg>
+                          <img id="meter_needle5" src="{{ url_for('static',filename='assets/images/svg-meter-gauge-needle.svg')}}" alt="">
+                          <!-- <input id="slider" type="range" min="0" max="100" value="0" />
+                        <label id="lbl" id="value" for="">0</label> -->
+                        </div>
+                        <p style="color: gray;">Confirm</p>
+                      </div>
+                      <div class="offeredContainer text-center mt-2">
+                        <p>Offered Strength</p>
+                        <h5>LOW</h5>
+                      </div>
+                      <div class="toolTipContainer meterTooltip mt-2">
+                        <i class="fas fa-info-circle" id="tool"></i>
+                        <div class="tooltipText">Offer Strength confirmation chances</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="secondCity">
+                <div class="flightDetailsContainer">
+                  <div class="flightOD col-6">
+                    <div class="checkBoxContainer">
+                      <input type="checkbox" name="" id="" />
+                    </div>
+                    <div class="citiesContainer">
+                      <div class="city">
+                        <p>Kuala Lumpur</p>
+                        <p class="colorType4">(KUL)</p>
+                      </div>
+                      <div class="timeDate text-center">
+                        <label>8hr 20m</label>
+                        <label>- - - - - - - - - -
+                          <i class="fas fa-plane planeIcon"></i></label>
+                        <label>10 Jan 2021</label>
+                      </div>
+                      <div class="city toCity">
+                        <p>Sydney</p>
+                        <p class="colorType4">(SYD)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="airways col-2">
+                    <p class="colorType4 flightHeading">Airways</p>
+                    <p class="flightValue">Malaysia Airlines</p>
+                  </div>
+                  <div class="flightName col-2">
+                    <p class="colorType4 flightHeading">Flight Name</p>
+                    <p class="flightValue">Flight MH0141</p>
+                  </div>
+                  <div class="flightClass col-2">
+                    <p class="colorType4 flightHeading">Class</p>
+                    <p class="flightValue">Economy</p>
+                  </div>
+                </div>
+                <div class="biddingSection" id="seatBidding">
+                  <div class="row">
+                    <div class="upgradeType col-lg-3">
+                      <div class="seatCount">
+                        <div class="selectSeat">
+                          <label>Select <br> Empty Seat</label>
+                          <input type="radio" name="emptySeat2" id="">
+                          <div class="seatIcons">
+                            <div class="icons d-flex justify-content-around">
+                              <i class="fas fa-clipboard colorType1"></i>
+                              <i class="fas fa-clipboard colorType1"></i>
+                              <i class="far fa-clipboard"></i>
+                            </div>
+                            <label>1 Empty Seats</label>
+                          </div>
+                        </div>
+                        <div class="viewSeat">
+                          <label class="colorType2" id="showCabin6">View Seat</label>
+                          <input type="radio" name="emptySeat2" id="">
+                          <div class="seatIcons">
+                            <div class="icons d-flex justify-content-around">
+                              <i class="fas fa-clipboard colorType1"></i>
+                              <i class="far fa-clipboard"></i>
+                              <i class="far fa-clipboard"></i>
+                            </div>
+                            <label>2 Empty Seats</label>
+                          </div>
+
+                          <div class="cabinImageContainer bgType3" id="cabinImageContainer6">
+                            <div class="closeBtnContainer"><i class="fas fa-times colorType5 closeBtn"
+                                id="closeCabin6"></i></div>
+                            <div class="cabinHeading text-center">
+                              <h3 class="businessClass cabinHeadingActive" id="businessClass6">Two Empty Seat</h3>
+                              <h3 class="firstClass" id="firstClass6">One Empty Seat</h3>
+                            </div>
+                            <div class="businessClassImages" id="businessClassImages6">
+                              <div class="cabinLargeImage mt-3">
+                                <img class="img-fluid largeImage" id="largeBusinessImage6" src="{{ url_for('static',filename='assets/images/business1.jpg')}}" alt="">
+                              </div>
+                              <div class="cabinImageList">
+                                <img class="img-fluid smallImage smallImageActive" src="{{ url_for('static',filename='assets/images/business1.jpg')}}"
+                                  alt="" onclick="enlargeBusinessImage6(this)">
+                                <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/business2.jpg')}}" alt="" onclick="enlargeBusinessImage6(this)">
+                                <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/business3.jpg')}}g" alt="" onclick="enlargeBusinessImage6(this)">
+                                <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/business4.jpg')}}" alt="" onclick="enlargeBusinessImage6(this)">
+                              </div>
+                            </div>
+
+                            <div class="firstClassImages" id="firstClassImages6">
+                              <div class="cabinLargeImage mt-3">
+                                <img class="img-fluid largeImage" id="largeFirstImage6" src="{{ url_for('static',filename='assets/images/first1.jpg')}}" alt="">
+                              </div>
+                              <div class="cabinImageList">
+                                <img class="img-fluid smallImage smallImageActive" src="{{ url_for('static',filename='assets/images/first1.jpg')}}" alt="" onclick="enlargeFirstImage6(this)">
+                                <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/first2.jpg')}}" alt="" onclick="enlargeFirstImage6(this)">
+                                <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/first3.jpg')}}" alt="" onclick="enlargeFirstImage6(this)">
+                                <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/first4.jpg')}}" alt="" onclick="enlargeFirstImage6(this)">
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sliderContainer col-lg-6">
+                      <div class="sliderPrice text-center">
+                        <h6>MYR <span id="biddingPrice6">200</span></h6>
+                      </div>
+                      <div class="sliderRangeContainer text-center d-flex justify-content-between align-items-center">
+                        <p>No offer</p>
+                        <input id="slider6" class="rangeSlider6" type="range" min="0" max="100" data-step="1" value="0">
+                        <p>MYR 400</p>
+                        <div class="toolTipContainer">
+                          <i class="fas fa-info-circle" id="tool"></i>
+                          <div class="tooltipText">Confirm your upgrade class after paying the amount</div>
+                        </div>
+                      </div>
+                      <div class="slideText text-center">
+                        <p class="colorType4">
+                          <i class="fas fa-chevron-right colorType6"></i>
+                          <i class="fas fa-chevron-right colorType7"></i>
+                          <i class="fas fa-chevron-right colorType8"></i>
+                          <i class="fas fa-chevron-right colorType9"></i>
+                          Slide till the end for instant confirmation
+                        </p>
+                      </div>
+                    </div>
+                    <div class="meterContainer  col-lg-3">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <p style="color: red;">Bidding</p>
+                        <div id="wrapper">
+                          <svg id="meter">
+                            <circle id="outline_curves" class="circle outline" cx="50%" cy="50%"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#f7494f" stroke-width="60"
+                              stroke-dasharray="95, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#f7794c" stroke-width="60"
+                              stroke-dasharray="81, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#fbb03b" stroke-width="60"
+                              stroke-dasharray="67, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#dee35a" stroke-width="60"
+                              stroke-dasharray="54, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#a2d55f" stroke-width="60"
+                              stroke-dasharray="41, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#59bc67" stroke-width="60"
+                              stroke-dasharray="27, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#15ad5d" stroke-width="60"
+                              stroke-dasharray="14, 189" fill="none"></circle>
+
+
+                            <circle id="mask6" class="circle" cx="50%" cy="50%"></circle>
+
+
+                            <circle id="outline_ends" class="circle outline" cx="50%" cy="50%"></circle>
+                          </svg>
+                          <img id="meter_needle6" src="{{ url_for('static',filename='assets/images/svg-meter-gauge-needle.svg')}}" alt="">
+                          <!-- <input id="slider" type="range" min="0" max="100" value="0" />
+                        <label id="lbl" id="value" for="">0</label> -->
+                        </div>
+                        <p style="color: gray;">Confirm</p>
+                      </div>
+                      <div class="offeredContainer text-center mt-2">
+                        <p>Offered Strength</p>
+                        <h5>LOW</h5>
+                      </div>
+                      <div class="toolTipContainer meterTooltip mt-2">
+                        <i class="fas fa-info-circle" id="tool"></i>
+                        <div class="tooltipText">Offer Strength confirmation chances</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="secondPassenger">
+              <div class="passengerContainer bgType4">
+                <div class="passengerName">
+                  <p class="subNames">Passenger Name 2:</p>
+                  <h4 class="colorType3">Miss Pot</h4>
+                </div>
+                <div class="travelDetails">
+                  <div class="travelOption">
+                    <label class="subNames"> Travelling: </label>
+                    <input type="radio" name="travel" id="onward" /><label class="subNames"
+                      id="radioName">Onward</label>
+                    <input type="radio" name="travel" id="onward" /><label class="subNames"
+                      id="radioName">Return</label>
+                  </div>
+                  <div class="cityNames">
+                    <label class="cityName">(BOM)</label>
+                    <label>---<i class="fas fa-plane planeIcon"></i></label>
+                    <label class="cityName">(KUL)</label>
+                    <label>---<i class="fas fa-plane planeIcon"></i></label>
+                    <label class="cityName">(SYD)</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="firstCity">
+                <div class="flightDetailsContainer">
+                  <div class="flightOD col-6">
+                    <div class="checkBoxContainer">
+                      <input type="checkbox" name="" id="" />
+                    </div>
+                    <div class="citiesContainer">
+                      <div class="city">
+                        <p>Mumbai</p>
+                        <p class="colorType4">(BOM)</p>
+                      </div>
+                      <div class="timeDate text-center">
+                        <label>5hr 10m</label>
+                        <label>- - - - - - - - - -
+                          <i class="fas fa-plane planeIcon"></i></label>
+                        <label>10 Jan 2021</label>
+                      </div>
+                      <div class="city toCity">
+                        <p>Kuala Lampur</p>
+                        <p class="colorType4">(KUL)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="airways col-2">
+                    <p class="colorType4 flightHeading">Airways</p>
+                    <p class="flightValue">Malaysia Airlines</p>
+                  </div>
+                  <div class="flightName col-2">
+                    <p class="colorType4 flightHeading">Flight Name</p>
+                    <p class="flightValue">Flight MH195</p>
+                  </div>
+                  <div class="flightClass col-2">
+                    <p class="colorType4 flightHeading">Class</p>
+                    <p class="flightValue">Economy</p>
+                  </div>
+                </div>
+                <div class="biddingSection" id="seatBidding">
+                  <div class="row">
+                    <div class="upgradeType col-lg-3">
+
+                      <div class="seatCount">
+                        <div class="selectSeat">
+                          <label>Select <br> Empty Seat</label>
+                          <input type="radio" name="emptySeat3" id="">
+                          <div class="seatIcons">
+                            <div class="icons d-flex justify-content-around">
+                              <i class="fas fa-clipboard colorType1"></i>
+                              <i class="fas fa-clipboard colorType1"></i>
+                              <i class="far fa-clipboard"></i>
+                            </div>
+                            <label>1 Empty Seats</label>
+                          </div>
+                        </div>
+                        <div class="viewSeat">
+                          <label class="colorType2" id="showCabin7">View Seat</label>
+                          <input type="radio" name="emptySeat3" id="">
+                          <div class="seatIcons">
+                            <div class="icons d-flex justify-content-around">
+                              <i class="fas fa-clipboard colorType1"></i>
+                              <i class="far fa-clipboard"></i>
+                              <i class="far fa-clipboard"></i>
+                            </div>
+                            <label>2 Empty Seats</label>
+                          </div>
+
+                          <div class="cabinImageContainer bgType3" id="cabinImageContainer7">
+                            <div class="closeBtnContainer"><i class="fas fa-times colorType5 closeBtn"
+                                id="closeCabin7"></i></div>
+                            <div class="cabinHeading text-center">
+                              <h3 class="businessClass cabinHeadingActive" id="businessClass7">Two Empty Seat</h3>
+                              <h3 class="firstClass" id="firstClass7">One Empty Seat</h3>
+                            </div>
+                            <div class="businessClassImages" id="businessClassImages7">
+                              <div class="cabinLargeImage mt-3">
+                                <img class="img-fluid largeImage" id="largeBusinessImage7" src="{{ url_for('static',filename='assets/images/business1.jpg')}}" alt="">
+                              </div>
+                              <div class="cabinImageList">
+                                <img class="img-fluid smallImage smallImageActive" src="{{ url_for('static',filename='assets/images/business1.jpg')}}"
+                                  alt="" onclick="enlargeBusinessImage7(this)">
+                                <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/business2.jpg')}}" alt="" onclick="enlargeBusinessImage7(this)">
+                                <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/business3.jpg')}}" alt="" onclick="enlargeBusinessImage7(this)">
+                                <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/business4.jpg')}}" alt="" onclick="enlargeBusinessImage7(this)">
+                              </div>
+                            </div>
+
+                            <div class="firstClassImages" id="firstClassImages7">
+                              <div class="cabinLargeImage mt-3">
+                                <img class="img-fluid largeImage" id="largeFirstImage7" src="{{ url_for('static',filename='assets/images/first1.jpg')}}" alt="">
+                              </div>
+                              <div class="cabinImageList">
+                                <img class="img-fluid smallImage smallImageActive" src="{{ url_for('static',filename='assets/images/first1.jpg')}}" alt="" onclick="enlargeFirstImage7(this)">
+                                <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/first2.jpg')}}" alt="" onclick="enlargeFirstImage7(this)">
+                                <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/first3.jpg')}}" alt="" onclick="enlargeFirstImage7(this)">
+                                <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/first4.jpg')}}" alt="" onclick="enlargeFirstImage7(this)">
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+
+
+                    </div>
+                    <div class="sliderContainer col-lg-6">
+                      <div class="sliderPrice text-center">
+                        <h6>MYR <span id="biddingPrice7">200</span></h6>
+                      </div>
+                      <div class="sliderRangeContainer text-center d-flex justify-content-between align-items-center">
+                        <p>No offer</p>
+                        <input id="slider7" class="rangeSlider7" type="range" min="0" max="100" data-step="1" value="0">
+                        <p>MYR 400</p>
+                        <div class="toolTipContainer">
+                          <i class="fas fa-info-circle" id="tool"></i>
+                          <div class="tooltipText">Confirm your upgrade class after paying the amount</div>
+                        </div>
+                      </div>
+                      <div class="slideText text-center">
+                        <p class="colorType4">
+                          <i class="fas fa-chevron-right colorType6"></i>
+                          <i class="fas fa-chevron-right colorType7"></i>
+                          <i class="fas fa-chevron-right colorType8"></i>
+                          <i class="fas fa-chevron-right colorType9"></i>
+                          Slide till the end for instant confirmation
+                        </p>
+                      </div>
+                    </div>
+                    <div class="meterContainer  col-lg-3">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <p style="color: red;">Bidding</p>
+                        <div id="wrapper">
+                          <svg id="meter">
+                            <circle id="outline_curves" class="circle outline" cx="50%" cy="50%"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#f7494f" stroke-width="60"
+                              stroke-dasharray="95, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#f7794c" stroke-width="60"
+                              stroke-dasharray="81, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#fbb03b" stroke-width="60"
+                              stroke-dasharray="67, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#dee35a" stroke-width="60"
+                              stroke-dasharray="54, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#a2d55f" stroke-width="60"
+                              stroke-dasharray="41, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#59bc67" stroke-width="60"
+                              stroke-dasharray="27, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#15ad5d" stroke-width="60"
+                              stroke-dasharray="14, 189" fill="none"></circle>
+
+
+                            <circle id="mask7" class="circle" cx="50%" cy="50%"></circle>
+
+
+                            <circle id="outline_ends" class="circle outline" cx="50%" cy="50%"></circle>
+                          </svg>
+                          <img id="meter_needle7" src="{{ url_for('static',filename='assets/images/svg-meter-gauge-needle.svg')}}" alt="">
+                          <!-- <input id="slider" type="range" min="0" max="100" value="0" />
+                        <label id="lbl" id="value" for="">0</label> -->
+                        </div>
+                        <p style="color: gray;">Confirm</p>
+                      </div>
+                      <div class="offeredContainer text-center mt-2">
+                        <p>Offered Strength</p>
+                        <h5>LOW</h5>
+                      </div>
+                      <div class="toolTipContainer meterTooltip mt-2">
+                        <i class="fas fa-info-circle" id="tool"></i>
+                        <div class="tooltipText">Offer Strength confirmation chances</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="secondCity">
+                <div class="flightDetailsContainer">
+                  <div class="flightOD col-6">
+                    <div class="checkBoxContainer">
+                      <input type="checkbox" name="" id="" />
+                    </div>
+                    <div class="citiesContainer">
+                      <div class="city">
+                        <p>Kuala Lumpur</p>
+                        <p class="colorType4">(KUL)</p>
+                      </div>
+                      <div class="timeDate text-center">
+                        <label>8hr 20m</label>
+                        <label>- - - - - - - - - -
+                          <i class="fas fa-plane planeIcon"></i></label>
+                        <label>10 Jan 2021</label>
+                      </div>
+                      <div class="city toCity">
+                        <p>Sydney</p>
+                        <p class="colorType4">(SYD)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="airways col-2">
+                    <p class="colorType4 flightHeading">Airways</p>
+                    <p class="flightValue">Malaysia Airlines</p>
+                  </div>
+                  <div class="flightName col-2">
+                    <p class="colorType4 flightHeading">Flight Name</p>
+                    <p class="flightValue">Flight MH0141</p>
+                  </div>
+                  <div class="flightClass col-2">
+                    <p class="colorType4 flightHeading">Class</p>
+                    <p class="flightValue">Economy</p>
+                  </div>
+                </div>
+                <div class="biddingSection" id="seatBidding">
+                  <div class="row">
+                    <div class="upgradeType col-lg-3">
+                      <div class="seatCount">
+                        <div class="selectSeat">
+                          <label>Select <br> Empty Seat</label>
+                          <input type="radio" name="emptySeat4" id="">
+                          <div class="seatIcons">
+                            <div class="icons d-flex justify-content-around">
+                              <i class="fas fa-clipboard colorType1"></i>
+                              <i class="fas fa-clipboard colorType1"></i>
+                              <i class="far fa-clipboard"></i>
+                            </div>
+                            <label>1 Empty Seats</label>
+                          </div>
+                        </div>
+                        <div class="viewSeat">
+                          <label class="colorType2" id="showCabin8">View Seat</label>
+                          <input type="radio" name="emptySeat4" id="">
+                          <div class="seatIcons">
+                            <div class="icons d-flex justify-content-around">
+                              <i class="fas fa-clipboard colorType1"></i>
+                              <i class="far fa-clipboard"></i>
+                              <i class="far fa-clipboard"></i>
+                            </div>
+                            <label>2 Empty Seats</label>
+                          </div>
+
+                          <div class="cabinImageContainer bgType3" id="cabinImageContainer8">
+                            <div class="closeBtnContainer"><i class="fas fa-times colorType5 closeBtn"
+                                id="closeCabin8"></i></div>
+                            <div class="cabinHeading text-center">
+                              <h3 class="businessClass cabinHeadingActive" id="businessClass8">Two Empty Seat</h3>
+                              <h3 class="firstClass" id="firstClass8">One Empty Seat</h3>
+                            </div>
+                            <div class="businessClassImages" id="businessClassImages8">
+                              <div class="cabinLargeImage mt-3">
+                                <img class="img-fluid largeImage" id="largeBusinessImage8" src="{{ url_for('static',filename='assets/images/business1.jpg')}}" alt="">
+                              </div>
+                              <div class="cabinImageList">
+                                <img class="img-fluid smallImage smallImageActive" src="{{ url_for('static',filename='assets/images/business1.jpg')}}" onclick="enlargeBusinessImage8(this)"
+                                  alt="">
+                                <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/business2.jpg')}}" alt="" onclick="enlargeBusinessImage8(this)">
+                                <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/business3.jpg')}}" alt="" onclick="enlargeBusinessImage8(this)">
+                                <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/business4.jpg')}}" alt="" onclick="enlargeBusinessImage8(this)">
+                              </div>
+                            </div>
+
+                            <div class="firstClassImages" id="firstClassImages8">
+                              <div class="cabinLargeImage mt-3">
+                                <img class="img-fluid largeImage" id="largeFirstImage8" src="{{ url_for('static',filename='assets/images/first1.jpg')}}" alt="">
+                              </div>
+                              <div class="cabinImageList">
+                                <img class="img-fluid smallImage smallImageActive" src="{{ url_for('static',filename='assets/images/first1.jpg')}}" alt="" onclick="enlargeFirstImage8(this)">
+                                <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/first2.jpg')}}" alt="" onclick="enlargeFirstImage8(this)">
+                                <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/first3.jpg')}}" alt="" onclick="enlargeFirstImage8(this)">
+                                <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/first4.jpg')}}" alt="" onclick="enlargeFirstImage8(this)">
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sliderContainer col-lg-6">
+                      <div class="sliderPrice text-center">
+                        <h6>MYR <span id="biddingPrice8">200</span></h6>
+                      </div>
+                      <div class="sliderRangeContainer text-center d-flex justify-content-between align-items-center">
+                        <p>No offer</p>
+                        <input id="slider8" class="rangeSlider8" type="range" min="0" max="100" data-step="1" value="0">
+                        <p>MYR 400</p>
+                        <div class="toolTipContainer">
+                          <i class="fas fa-info-circle" id="tool"></i>
+                          <div class="tooltipText">Confirm your upgrade class after paying the amount</div>
+                        </div>
+                      </div>
+                      <div class="slideText text-center">
+                        <p class="colorType4">
+                          <i class="fas fa-chevron-right colorType6"></i>
+                          <i class="fas fa-chevron-right colorType7"></i>
+                          <i class="fas fa-chevron-right colorType8"></i>
+                          <i class="fas fa-chevron-right colorType9"></i>
+                          Slide till the end for instant confirmation
+                        </p>
+                      </div>
+                    </div>
+                    <div class="meterContainer col-lg-3">
+                      <div class=" d-flex justify-content-between align-items-center">
+                        <p style="color: red;">Bidding</p>
+                        <div id="wrapper">
+                          <svg id="meter">
+                            <circle id="outline_curves" class="circle outline" cx="50%" cy="50%"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#f7494f" stroke-width="60"
+                              stroke-dasharray="95, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#f7794c" stroke-width="60"
+                              stroke-dasharray="81, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#fbb03b" stroke-width="60"
+                              stroke-dasharray="67, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#dee35a" stroke-width="60"
+                              stroke-dasharray="54, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#a2d55f" stroke-width="60"
+                              stroke-dasharray="41, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#59bc67" stroke-width="60"
+                              stroke-dasharray="27, 189" fill="none"></circle>
+
+                            <circle class="circle range" cx="50%" cy="50%" stroke="#15ad5d" stroke-width="60"
+                              stroke-dasharray="14, 189" fill="none"></circle>
+
+
+                            <circle id="mask8" class="circle" cx="50%" cy="50%"></circle>
+
+
+                            <circle id="outline_ends" class="circle outline" cx="50%" cy="50%"></circle>
+                          </svg>
+                          <img id="meter_needle8" src="{{ url_for('static',filename='assets/images/svg-meter-gauge-needle.svg')}}" alt="">
+                          <!-- <input id="slider" type="range" min="0" max="100" value="0" />
+                        <label id="lbl" id="value" for="">0</label> -->
+                        </div>
+                        <p style="color: gray;">Confirm</p>
+                      </div>
+                      <div class="offeredContainer text-center mt-2">
+                        <p>Offered Strength</p>
+                        <h5>LOW</h5>
+                      </div>
+                      <div class="toolTipContainer meterTooltip mt-2">
+                        <i class="fas fa-info-circle" id="tool"></i>
+                        <div class="tooltipText">Offer Strength confirmation chances</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!------------------------------------------------------- Add Luggage Section Starts here--------------------------------------------------------- -->
+        <div class="addLuggageContainer col-9" id="addLuggageContainer">
+
+          <div class="travelDetails">
+            <div class="prefferredTravel bgType5">
+              <div class="travelOption" id="prefferedTravelOption">
+                <label class="subNames"> Travelling: </label>
+                <input type="radio" name="travel" id="onward" /><label class="subNames" id="radioName">Onward</label>
+                <input type="radio" name="travel" id="onward" /><label class="subNames" id="radioName">Return</label>
+              </div>
+              <div class="cityNames" id="prefferedCityNames">
+                <label class="cityName">(BOM)</label>
+                <label>---<i class="fas fa-plane planeIcon"></i></label>
+                <label class="cityName">(KUL)</label>
+                <label>---<i class="fas fa-plane planeIcon"></i></label>
+                <label class="cityName">(SYD)</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <div class="citiesContainer bgType6 px-3 py-3">
+                <div class="city col-4">
+                  <p>Mumbai</p>
+                  <p class="colorType4">(BOM)</p>
+                </div>
+                <div class="timeDate text-center col-4">
+                  <label>5hr 10m</label>
+                  <label>- - - - - - - - - -
+                    <i class="fas fa-plane planeIcon"></i></label>
+                  <label>10 Jan 2021</label>
+                </div>
+                <div class="city toCity col-4">
+                  <p>Kuala Lampur</p>
+                  <p class="colorType4">(KUL)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="preferredPassengerDetails">
+            <div class="row">
+              <div class="preferredPassengerHead">
+                <div class="col-4">
+                  <p>PASSENGER NAME</p>
+                </div>
+                <div class="col-4 text-center">
+                  <p>(SEX | AGE)</p>
+                </div>
+                <div class="col-4 d-flex justify-content-end">
+                  <p>SELECT ACTION</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="preferredPassengerName">
+                <div class="col-4">
+                  <p class="colorType1">Robert Downey</p>
+                </div>
+                <div class="col-4 text-center">
+                  <p>(M | 42)</p>
+                </div>
+                <div class="selectBaggageContainer col-4">
+
+                  <div class="d-flex justify-content-end">
+                    <div class="selectBaggage" id="p3">
+                      <p id="selectClass3">Select Baggage</p>
+                      <div class="downArrow">
+                        <i class="fa fa-angle-down" id="arrowIcon3"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="kgListContainer" id="list3">
+                    <div class="kgList">
+                      <p>1kg</p>
+                      <p>MYR 100</p>
+                    </div>
+                    <div class="kgList">
+                      <p>2kg</p>
+                      <p>MYR 190</p>
+                    </div>
+                    <div class="kgList">
+                      <p>3kg</p>
+                      <p>MYR 285</p>
+                    </div>
+                    <div class="kgList">
+                      <p>4kg</p>
+                      <p>MYR 380</p>
+                    </div>
+                    <div class="kgList">
+                      <p>5kg</p>
+                      <p>MYR 475</p>
+                    </div>
+                    <div class="kgList">
+                      <p>6kg</p>
+                      <p>MYR 570</p>
+                    </div>
+                    <div class="kgList">
+                      <p>7kg</p>
+                      <p>MYR 665</p>
+                    </div>
+                    <div class="kgList">
+                      <p>8kg</p>
+                      <p>MYR 760</p>
+                    </div>
+                    <div class="kgList">
+                      <p>9kg</p>
+                      <p>MYR 855</p>
+                    </div>
+                    <div class="kgList">
+                      <p>10kg</p>
+                      <p>MYR 950</p>
+                    </div>
+                    <div class="kgList">
+                      <p>11kg</p>
+                      <p>MYR 1045</p>
+                    </div>
+                    <div class="kgList">
+                      <p>12kg</p>
+                      <p>MYR 1140</p>
+                    </div>
+                    <div class="kgList">
+                      <p>13kg</p>
+                      <p>MYR 1235</p>
+                    </div>
+                    <div class="kgList">
+                      <p>14kg</p>
+                      <p>MYR 1330</p>
+                    </div>
+                    <div class="kgList">
+                      <p>15kg</p>
+                      <p>MYR 1425</p>
+                    </div>
+                    <div class="kgList">
+                      <p>16kg</p>
+                      <p>MYR 1520</p>
+                    </div>
+                    <div class="kgList">
+                      <p>17kg</p>
+                      <p>MYR 1615</p>
+                    </div>
+                    <div class="kgList">
+                      <p>18kg</p>
+                      <p>MYR 1710</p>
+                    </div>
+                    <div class="kgList">
+                      <p>19kg</p>
+                      <p>MYR 1805</p>
+                    </div>
+                    <div class="kgList">
+                      <p>20kg</p>
+                      <p>MYR 1990</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="preferredPassengerName">
+                <div class="col-4">
+                  <p>Miss Pot</p>
+                </div>
+                <div class="col-4 text-center">
+                  <p>(F | 40)</p>
+                </div>
+                <div class="selectBaggageContainer col-4 ">
+                  <div class="d-flex justify-content-end">
+                    <div class="selectBaggage" id="p4">
+                      <p id="selectClass3">Select Baggage</p>
+                      <div class="downArrow">
+                        <i class="fa fa-angle-down" id="arrowIcon4"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="kgListContainer" id="list4">
+                    <div class="kgList">
+                      <p>1kg</p>
+                      <p>MYR 100</p>
+                    </div>
+                    <div class="kgList">
+                      <p>2kg</p>
+                      <p>MYR 190</p>
+                    </div>
+                    <div class="kgList">
+                      <p>3kg</p>
+                      <p>MYR 285</p>
+                    </div>
+                    <div class="kgList">
+                      <p>4kg</p>
+                      <p>MYR 380</p>
+                    </div>
+                    <div class="kgList">
+                      <p>5kg</p>
+                      <p>MYR 475</p>
+                    </div>
+                    <div class="kgList">
+                      <p>6kg</p>
+                      <p>MYR 570</p>
+                    </div>
+                    <div class="kgList">
+                      <p>7kg</p>
+                      <p>MYR 665</p>
+                    </div>
+                    <div class="kgList">
+                      <p>8kg</p>
+                      <p>MYR 760</p>
+                    </div>
+                    <div class="kgList">
+                      <p>9kg</p>
+                      <p>MYR 855</p>
+                    </div>
+                    <div class="kgList">
+                      <p>10kg</p>
+                      <p>MYR 950</p>
+                    </div>
+                    <div class="kgList">
+                      <p>11kg</p>
+                      <p>MYR 1045</p>
+                    </div>
+                    <div class="kgList">
+                      <p>12kg</p>
+                      <p>MYR 1140</p>
+                    </div>
+                    <div class="kgList">
+                      <p>13kg</p>
+                      <p>MYR 1235</p>
+                    </div>
+                    <div class="kgList">
+                      <p>14kg</p>
+                      <p>MYR 1330</p>
+                    </div>
+                    <div class="kgList">
+                      <p>15kg</p>
+                      <p>MYR 1425</p>
+                    </div>
+                    <div class="kgList">
+                      <p>16kg</p>
+                      <p>MYR 1520</p>
+                    </div>
+                    <div class="kgList">
+                      <p>17kg</p>
+                      <p>MYR 1615</p>
+                    </div>
+                    <div class="kgList">
+                      <p>18kg</p>
+                      <p>MYR 1710</p>
+                    </div>
+                    <div class="kgList">
+                      <p>19kg</p>
+                      <p>MYR 1805</p>
+                    </div>
+                    <div class="kgList">
+                      <p>20kg</p>
+                      <p>MYR 1990</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <div class="citiesContainer bgType6 px-3 py-3 mt-3">
+                <div class="city col-4">
+                  <p>Kuala Lampur</p>
+                  <p class="colorType4">(KUL)</p>
+                </div>
+                <div class="timeDate text-center col-4">
+                  <label>8hr 20m</label>
+                  <label>- - - - - - - - - -
+                    <i class="fas fa-plane planeIcon"></i></label>
+                  <label>10 Jan 2021</label>
+                </div>
+                <div class="city toCity col-4">
+                  <p>Sydney</p>
+                  <p class="colorType4">(SYD)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="preferredPassengerDetails">
+            <div class="row">
+              <div class="preferredPassengerHead">
+                <div class="col-4">
+                  <p>PASSENGER NAME</p>
+                </div>
+                <div class="col-4 text-center">
+                  <p>(SEX | AGE)</p>
+                </div>
+                <div class="col-4 text-center d-flex justify-content-end">
+                  <p>SELECT ACTION</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="preferredPassengerName">
+                <div class="col-4">
+                  <p class="colorType1">Robert Downey</p>
+                </div>
+                <div class="col-4 text-center">
+                  <p>(M | 42)</p>
+                </div>
+                <div class="selectBaggageContainer text-center col-4">
+                  <div class="d-flex justify-content-end">
+                    <div class="selectBaggage" id="p5">
+                      <p id="selectClass5">Select Baggage</p>
+                      <div class="downArrow">
+                        <i class="fa fa-angle-down" id="arrowIcon5"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="kgListContainer" id="list5">
+                    <div class="kgList">
+                      <p>1kg</p>
+                      <p>MYR 100</p>
+                    </div>
+                    <div class="kgList">
+                      <p>2kg</p>
+                      <p>MYR 190</p>
+                    </div>
+                    <div class="kgList">
+                      <p>3kg</p>
+                      <p>MYR 285</p>
+                    </div>
+                    <div class="kgList">
+                      <p>4kg</p>
+                      <p>MYR 380</p>
+                    </div>
+                    <div class="kgList">
+                      <p>5kg</p>
+                      <p>MYR 475</p>
+                    </div>
+                    <div class="kgList">
+                      <p>6kg</p>
+                      <p>MYR 570</p>
+                    </div>
+                    <div class="kgList">
+                      <p>7kg</p>
+                      <p>MYR 665</p>
+                    </div>
+                    <div class="kgList">
+                      <p>8kg</p>
+                      <p>MYR 760</p>
+                    </div>
+                    <div class="kgList">
+                      <p>9kg</p>
+                      <p>MYR 855</p>
+                    </div>
+                    <div class="kgList">
+                      <p>10kg</p>
+                      <p>MYR 950</p>
+                    </div>
+                    <div class="kgList">
+                      <p>11kg</p>
+                      <p>MYR 1045</p>
+                    </div>
+                    <div class="kgList">
+                      <p>12kg</p>
+                      <p>MYR 1140</p>
+                    </div>
+                    <div class="kgList">
+                      <p>13kg</p>
+                      <p>MYR 1235</p>
+                    </div>
+                    <div class="kgList">
+                      <p>14kg</p>
+                      <p>MYR 1330</p>
+                    </div>
+                    <div class="kgList">
+                      <p>15kg</p>
+                      <p>MYR 1425</p>
+                    </div>
+                    <div class="kgList">
+                      <p>16kg</p>
+                      <p>MYR 1520</p>
+                    </div>
+                    <div class="kgList">
+                      <p>17kg</p>
+                      <p>MYR 1615</p>
+                    </div>
+                    <div class="kgList">
+                      <p>18kg</p>
+                      <p>MYR 1710</p>
+                    </div>
+                    <div class="kgList">
+                      <p>19kg</p>
+                      <p>MYR 1805</p>
+                    </div>
+                    <div class="kgList">
+                      <p>20kg</p>
+                      <p>MYR 1990</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="preferredPassengerName">
+                <div class="col-4">
+                  <p>Miss Pot</p>
+                </div>
+                <div class="col-4 text-center">
+                  <p>(F | 40)</p>
+                </div>
+                <div class="selectBaggageContainer col-4">
+                  <div class="d-flex justify-content-end">
+                    <div class="selectBaggage" id="p6">
+                      <p id="selectClass3">Select Baggage</p>
+                      <div class="downArrow">
+                        <i class="fa fa-angle-down" id="arrowIcon6"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="kgListContainer" id="list6">
+                    <div class="kgList">
+                      <p>1kg</p>
+                      <p>MYR 100</p>
+                    </div>
+                    <div class="kgList">
+                      <p>2kg</p>
+                      <p>MYR 190</p>
+                    </div>
+                    <div class="kgList">
+                      <p>3kg</p>
+                      <p>MYR 285</p>
+                    </div>
+                    <div class="kgList">
+                      <p>4kg</p>
+                      <p>MYR 380</p>
+                    </div>
+                    <div class="kgList">
+                      <p>5kg</p>
+                      <p>MYR 475</p>
+                    </div>
+                    <div class="kgList">
+                      <p>6kg</p>
+                      <p>MYR 570</p>
+                    </div>
+                    <div class="kgList">
+                      <p>7kg</p>
+                      <p>MYR 665</p>
+                    </div>
+                    <div class="kgList">
+                      <p>8kg</p>
+                      <p>MYR 760</p>
+                    </div>
+                    <div class="kgList">
+                      <p>9kg</p>
+                      <p>MYR 855</p>
+                    </div>
+                    <div class="kgList">
+                      <p>10kg</p>
+                      <p>MYR 950</p>
+                    </div>
+                    <div class="kgList">
+                      <p>11kg</p>
+                      <p>MYR 1045</p>
+                    </div>
+                    <div class="kgList">
+                      <p>12kg</p>
+                      <p>MYR 1140</p>
+                    </div>
+                    <div class="kgList">
+                      <p>13kg</p>
+                      <p>MYR 1235</p>
+                    </div>
+                    <div class="kgList">
+                      <p>14kg</p>
+                      <p>MYR 1330</p>
+                    </div>
+                    <div class="kgList">
+                      <p>15kg</p>
+                      <p>MYR 1425</p>
+                    </div>
+                    <div class="kgList">
+                      <p>16kg</p>
+                      <p>MYR 1520</p>
+                    </div>
+                    <div class="kgList">
+                      <p>17kg</p>
+                      <p>MYR 1615</p>
+                    </div>
+                    <div class="kgList">
+                      <p>18kg</p>
+                      <p>MYR 1710</p>
+                    </div>
+                    <div class="kgList">
+                      <p>19kg</p>
+                      <p>MYR 1805</p>
+                    </div>
+                    <div class="kgList">
+                      <p>20kg</p>
+                      <p>MYR 1990</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+
+
+        <!------------------------------------------------------- Add Lounge Section Starts here--------------------------------------------------------- -->
+        <div class="addLoungeContainer col-9" id="addLoungeContainer">
+          <div class="travelDetails">
+            <div class="prefferredTravel bgType5">
+              <div class="travelOption" id="prefferedTravelOption">
+                <label class="subNames"> Travelling: </label>
+                <input type="radio" name="travel" id="onward" /><label class="subNames" id="radioName">Onward</label>
+                <input type="radio" name="travel" id="onward" /><label class="subNames" id="radioName">Return</label>
+              </div>
+              <div class="cityNames" id="prefferedCityNames">
+                <label class="cityName">(BOM)</label>
+                <label>---<i class="fas fa-plane planeIcon"></i></label>
+                <label class="cityName">(KUL)</label>
+                <label>---<i class="fas fa-plane planeIcon"></i></label>
+                <label class="cityName">(SYD)</label>
+              </div>
+            </div>
+          </div>
+          <hr class="hr1">
+          <div class="loungeCities bgType6 d-flex">
+            <p class="bgType3 colorType5" id="cityBom">BOM</p>
+            <p class="colorType4" id="cityKul">KUL</p>
+          </div>
+          <div class="loungeScrollContainer" id="cityBomData">
+
+            <div class="loungeHeading">
+              <h4 class="colorType4"><span>Lounge's</span> in BOM Airport</h4>
+            </div>
+
+            <div class="loungeContainer bgType6">
+              <div class="row">
+                <div class="loungeImages col-4">
+                  <img class="img-fluid mainLoungeImg" src="{{ url_for('static',filename='assets/images/lounge3.jpg')}}" alt="">
+                  <label class="viewImages" id="showCabin9">View all images</label>
+
+                  <div class="loungeImageContainer bgType3" id="cabinImageContainer9">
+                    <div class="d-flex justify-content-end"><i class="fas fa-times colorType5 closeBtn"
+                        id="closeCabin9"></i></div>
+                    <div class="cabinHeading text-left">
+                      <h3 class="businessClass cabinHeadingActive" id="businessClass9">Intercontinental Dhaka Balaka
+                        Executive Lounge</h3>
+                    </div>
+                    <div class="businessClassImages" id="businessClassImages9">
+                      <div class="cabinLargeImage mt-3">
+                        <img class="img-fluid largeImage" id="largeBusinessImage9" src="{{ url_for('static',filename='assets/images/lounge1.jpg')}}" alt="">
+                      </div>
+                      <div class="cabinImageList">
+                        <img class="img-fluid smallImage smallImageActive" src="{{ url_for('static',filename='assets/images/lounge4.jpg')}}" alt="" onclick="enlargeBusinessImage9(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge2.jpg')}}" alt="" onclick="enlargeBusinessImage9(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge3.jpg')}}" alt="" onclick="enlargeBusinessImage9(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge4.jpg')}}" alt="" onclick="enlargeBusinessImage9(this)">
+                      </div>
+                    </div>
+
+                  </div>
+
+
+
+                </div>
+                <div class="loungeDetails col-8">
+                  <div class="loungeNamePrice">
+                    <div class="row">
+
+                      <div class="loungeName col-7">
+                        <p class="colorType1">Intercontinental Dhaka Balaka Executive Lounge</p>
+                        <div class="rating">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="far fa-star colorType6"></i>
+                          <label for="">(4/5)</label>
+                        </div>
+                      </div>
+                      <div class="loungePrice col-5">
+                        <div class="pricePerson">
+                          <p class="colorType4">Price<span> /Person</span></p>
+                          <label>MYR 699</label>
+                        </div>
+                        <div class="selectLounge" id="loungeSelect">
+                          <div id="selectText">
+                            Select
+                          </div>
+                          <div class="increaseItemContainer">
+                            <p id="selectMinus"><i class="fas fa-minus"></i></p>
+                            <p id="selectNumber">1</p>
+                            <p id="selectPlus"><i class="fas fa-plus"></i></p>
+                          </div>
+                        </div>
+                      </div>
+                      <hr class="hr2">
+                    </div>
+                  </div>
+                  <p class="benefits">Benefits</p>
+                  <div class="benefitsListContainer">
+                    <div class="row">
+                      <div class="list col-5">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> Exclusive conference rooms</li>
+                          <li><i class="far fa-check-circle"></i> Alcoholic & Non-Alcoholic beverages</li>
+                          <li><i class="far fa-check-circle"></i> Television and Wifi</li>
+                          <li><i class="far fa-check-circle"></i> Shower rooms</li>
+                        </ul>
+                      </div>
+                      <div class="list col-4">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> International culsine</li>
+                          <li><i class="far fa-check-circle"></i> Newspapers and Magazines</li>
+                          <li><i class="far fa-check-circle"></i> Private smoking area</li>
+                          <li><i class="far fa-check-circle"></i> Private rooms</li>
+                        </ul>
+                      </div>
+                      <div class="list col-3">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> 24/7 available</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="loungeContainer bgType6">
+              <div class="row">
+                <div class="loungeImages col-4">
+                  <img class="img-fluid mainLoungeImg" src="{{ url_for('static',filename='assets/images/lounge4.jpg')}}" alt="">
+                  <label class="viewImages" id="showCabin10">View all images</label>
+
+                  <div class="loungeImageContainer bgType3" id="cabinImageContainer10">
+                    <div class="d-flex justify-content-end"><i class="fas fa-times colorType5 closeBtn"
+                        id="closeCabin10"></i></div>
+                    <div class="cabinHeading text-left">
+                      <h3 class="businessClass cabinHeadingActive" id="businessClass10">Eastern Bank Sky Lounge</h3>
+                    </div>
+                    <div class="businessClassImages" id="businessClassImages10">
+                      <div class="cabinLargeImage mt-3">
+                        <img class="img-fluid largeImage" id="largeBusinessImage10" src="{{ url_for('static',filename='assets/images/lounge4.jpg')}}" alt="">
+                      </div>
+                      <div class="cabinImageList">
+                        <img class="img-fluid smallImage smallImageActive" src="{{ url_for('static',filename='assets/images/lounge5.jpg')}}" alt="" onclick="enlargeBusinessImage10(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge2.jpg')}}" alt="" onclick="enlargeBusinessImage10(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge3.jpg')}}" alt="" onclick="enlargeBusinessImage10(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge4.jpg')}}" alt="" onclick="enlargeBusinessImage10(this)">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="loungeDetails col-8">
+                  <div class="loungeNamePrice">
+                    <div class="row">
+
+                      <div class="loungeName col-7">
+                        <p class="colorType1">Eastern Bank Sky Lounge</p>
+                        <div class="rating">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="far fa-star colorType6"></i>
+                          <label for="">(4/5)</label>
+                        </div>
+                      </div>
+                      <div class="loungePrice col-5">
+                        <div class="pricePerson">
+                          <p class="colorType4">Price<span> /Person</span></p>
+                          <label>MYR 400</label>
+                        </div>
+                        <div class="selectLounge">
+                          Select
+                        </div>
+                      </div>
+                      <hr class="hr2">
+                    </div>
+                  </div>
+                  <p class="benefits">Benefits</p>
+                  <div class="benefitsListContainer">
+                    <div class="row">
+                      <div class="list col-5">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> Exclusive conference rooms</li>
+                          <li><i class="far fa-check-circle"></i> Alcoholic & Non-Alcoholic beverages</li>
+                          <li><i class="far fa-check-circle"></i> Television and Wifi</li>
+                          <li><i class="far fa-check-circle"></i> Shower rooms</li>
+                        </ul>
+                      </div>
+                      <div class="list col-4">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> International culsine</li>
+                          <li><i class="far fa-check-circle"></i> Newspapers and Magazines</li>
+                          <li><i class="far fa-check-circle"></i> Private smoking area</li>
+                          <li><i class="far fa-check-circle"></i> Private rooms</li>
+                        </ul>
+                      </div>
+                      <div class="list col-3">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> 24/7 available</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="loungeContainer bgType6">
+              <div class="row">
+                <div class="loungeImages col-4">
+                  <img class="img-fluid mainLoungeImg" src="{{ url_for('static',filename='assets/images/lounge5.jpg')}}" alt="">
+                  <label class="viewImages" id="showCabin11">View all images</label>
+
+                  <div class="loungeImageContainer bgType3" id="cabinImageContainer11">
+                    <div class="d-flex justify-content-end"><i class="fas fa-times colorType5 closeBtn"
+                        id="closeCabin11"></i></div>
+                    <div class="cabinHeading text-left">
+                      <h3 class="businessClass cabinHeadingActive" id="businessClass11">Travel Club Lounge</h3>
+                    </div>
+                    <div class="businessClassImages" id="businessClassImages11">
+                      <div class="cabinLargeImage mt-3">
+                        <img class="img-fluid largeImage" id="largeBusinessImage11" src="{{ url_for('static',filename='assets/images/lounge5.jpg')}}" alt="">
+                      </div>
+                      <div class="cabinImageList">
+                        <img class="img-fluid smallImage smallImageActive" src="{{ url_for('static',filename='assets/images/lounge4.jpg')}}" alt="" onclick="enlargeBusinessImage11(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge1.jpg')}}" alt="" onclick="enlargeBusinessImage11(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge2.jpg')}}" alt="" onclick="enlargeBusinessImage11(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge3.jpg')}}" alt="" onclick="enlargeBusinessImage11(this)">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="loungeDetails col-8">
+                  <div class="loungeNamePrice">
+                    <div class="row">
+
+                      <div class="loungeName col-7">
+                        <p class="colorType1">Travel Club Lounge</p>
+                        <div class="rating">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="far fa-star colorType6"></i>
+                          <label for="">(4/5)</label>
+                        </div>
+                      </div>
+                      <div class="loungePrice col-5">
+                        <div class="pricePerson">
+                          <p class="colorType4">Price<span> /Person</span></p>
+                          <label>MYR 899</label>
+                        </div>
+                        <div class="selectLounge">
+                          Select
+                        </div>
+                      </div>
+                      <hr class="hr2">
+                    </div>
+                  </div>
+                  <p class="benefits">Benefits</p>
+                  <div class="benefitsListContainer">
+                    <div class="row">
+                      <div class="list col-5">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> Exclusive conference rooms</li>
+                          <li><i class="far fa-check-circle"></i> Alcoholic & Non-Alcoholic beverages</li>
+                          <li><i class="far fa-check-circle"></i> Television and Wifi</li>
+                          <li><i class="far fa-check-circle"></i> Shower rooms</li>
+                        </ul>
+                      </div>
+                      <div class="list col-4">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> International culsine</li>
+                          <li><i class="far fa-check-circle"></i> Newspapers and Magazines</li>
+                          <li><i class="far fa-check-circle"></i> Private smoking area</li>
+                          <li><i class="far fa-check-circle"></i> Private rooms</li>
+                        </ul>
+                      </div>
+                      <div class="list col-3">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> 24/7 available</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="loungeContainer bgType6">
+              <div class="row">
+                <div class="loungeImages col-4">
+                  <img class="img-fluid mainLoungeImg" src="{{ url_for('static',filename='assets/images/lounge6.jpg')}}" alt="">
+                  <label class="viewImages" id="showCabin12">View all images</label>
+
+                  <div class="loungeImageContainer bgType3" id="cabinImageContainer12">
+                    <div class="d-flex justify-content-end"><i class="fas fa-times colorType5 closeBtn"
+                        id="closeCabin12"></i></div>
+                    <div class="cabinHeading text-left">
+                      <h3 class="businessClass cabinHeadingActive" id="businessClass12">Loyalaty Lounge</h3>
+                    </div>
+                    <div class="businessClassImages" id="businessClassImages12">
+                      <div class="cabinLargeImage mt-3">
+                        <img class="img-fluid largeImage" id="largeBusinessImage12" src="{{ url_for('static',filename='assets/images/lounge6.jpg')}}" alt="">
+                      </div>
+                      <div class="cabinImageList">
+                        <img class="img-fluid smallImage smallImageActive" src="{{ url_for('static',filename='assets/images/lounge4.jpg')}}" alt="" onclick="enlargeBusinessImage12(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge1.jpg')}}" alt="" onclick="enlargeBusinessImage12(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge2.jpg')}}" alt="" onclick="enlargeBusinessImage12(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge3.jpg')}}" alt="" onclick="enlargeBusinessImage12(this)">
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+                <div class="loungeDetails col-8">
+                  <div class="loungeNamePrice">
+                    <div class="row">
+
+                      <div class="loungeName col-7">
+                        <p class="colorType1">Loyalaty Lounge</p>
+                        <div class="rating">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="far fa-star colorType6"></i>
+                          <label for="">(4/5)</label>
+                        </div>
+                      </div>
+                      <div class="loungePrice col-5">
+                        <div class="pricePerson">
+                          <p class="colorType4">Price<span> /Person</span></p>
+                          <label>MYR 200</label>
+                        </div>
+                        <div class="selectLounge">
+                          Select
+                        </div>
+                      </div>
+                      <hr class="hr2">
+                    </div>
+                  </div>
+                  <p class="benefits">Benefits</p>
+                  <div class="benefitsListContainer">
+                    <div class="row">
+                      <div class="list col-5">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> Exclusive conference rooms</li>
+                          <li><i class="far fa-check-circle"></i> Alcoholic & Non-Alcoholic beverages</li>
+                          <li><i class="far fa-check-circle"></i> Television and Wifi</li>
+                          <li><i class="far fa-check-circle"></i> Shower rooms</li>
+                        </ul>
+                      </div>
+                      <div class="list col-4">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> International culsine</li>
+                          <li><i class="far fa-check-circle"></i> Newspapers and Magazines</li>
+                          <li><i class="far fa-check-circle"></i> Private smoking area</li>
+                          <li><i class="far fa-check-circle"></i> Private rooms</li>
+                        </ul>
+                      </div>
+                      <div class="list col-3">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> 24/7 available</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="loungeContainer bgType6">
+              <div class="row">
+                <div class="loungeImages col-4">
+                  <img class="img-fluid mainLoungeImg" src="{{ url_for('static',filename='assets/images/lounge7.jpg')}}" alt="">
+                  <label class="viewImages" id="showCabin13">View all images</label>
+
+                  <div class="loungeImageContainer bgType3" id="cabinImageContainer13">
+                    <div class="d-flex justify-content-end"><i class="fas fa-times colorType5 closeBtn"
+                        id="closeCabin13"></i></div>
+                    <div class="cabinHeading text-left">
+                      <h3 class="businessClass cabinHeadingActive" id="businessClass13">First Class Lounge</h3>
+                    </div>
+                    <div class="businessClassImages" id="businessClassImages13">
+                      <div class="cabinLargeImage mt-3">
+                        <img class="img-fluid largeImage" id="largeBusinessImage13" src="{{ url_for('static',filename='assets/images/lounge7.jpg')}}" alt="">
+                      </div>
+                      <div class="cabinImageList">
+                        <img class="img-fluid smallImage smallImageActive" src="{{ url_for('static',filename='assets/images/lounge4.jpg')}}" alt="" onclick="enlargeBusinessImage13(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge2.jpg')}}" alt="" onclick="enlargeBusinessImage13(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge3.jpg')}}" alt="" onclick="enlargeBusinessImage13(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge3.jpg')}}" alt="" onclick="enlargeBusinessImage13(this)">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="loungeDetails col-8">
+                  <div class="loungeNamePrice">
+                    <div class="row">
+
+                      <div class="loungeName col-7">
+                        <p class="colorType1">First Class Lounge</p>
+                        <div class="rating">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="far fa-star colorType6"></i>
+                          <label for="">(4/5)</label>
+                        </div>
+                      </div>
+                      <div class="loungePrice col-5">
+                        <div class="pricePerson">
+                          <p class="colorType4">Price<span> /Person</span></p>
+                          <label>MYR 999</label>
+                        </div>
+                        <div class="selectLounge">
+                          Select
+                        </div>
+                      </div>
+                      <hr class="hr2">
+                    </div>
+                  </div>
+                  <p class="benefits">Benefits</p>
+                  <div class="benefitsListContainer">
+                    <div class="row">
+                      <div class="list col-5">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> Exclusive conference rooms</li>
+                          <li><i class="far fa-check-circle"></i> Alcoholic & Non-Alcoholic beverages</li>
+                          <li><i class="far fa-check-circle"></i> Television and Wifi</li>
+                          <li><i class="far fa-check-circle"></i> Shower rooms</li>
+                        </ul>
+                      </div>
+                      <div class="list col-4">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> International culsine</li>
+                          <li><i class="far fa-check-circle"></i> Newspapers and Magazines</li>
+                          <li><i class="far fa-check-circle"></i> Private smoking area</li>
+                          <li><i class="far fa-check-circle"></i> Private rooms</li>
+                        </ul>
+                      </div>
+                      <div class="list col-3">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> 24/7 available</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="loungeScrollContainer" id="cityKulData">
+
+            <div class="loungeHeading">
+              <h4 class="colorType4"><span>Lounge's</span> in Kuala Lumpur Airport</h4>
+            </div>
+
+            <div class="loungeContainer bgType6">
+              <div class="row">
+                <div class="loungeImages col-4">
+                  <img class="img-fluid mainLoungeImg" src="{{ url_for('static',filename='assets/images/lounge6.jpg')}}" alt="">
+                  <label class="viewImages" id="showCabin14">View all images</label>
+
+                  <div class="loungeImageContainer bgType3" id="cabinImageContainer14">
+                    <div class="d-flex justify-content-end"><i class="fas fa-times colorType5 closeBtn"
+                        id="closeCabin14"></i></div>
+                    <div class="cabinHeading text-left">
+                      <h3 class="businessClass cabinHeadingActive" id="businessClass14">Plaza Premium Lounge</h3>
+                    </div>
+                    <div class="businessClassImages" id="businessClassImages14">
+                      <div class="cabinLargeImage mt-3">
+                        <img class="img-fluid largeImage" id="largeBusinessImage14" src="{{ url_for('static',filename='assets/images/lounge6.jpg')}}" alt="">
+                      </div>
+                      <div class="cabinImageList">
+                        <img class="img-fluid smallImage smallImageActive" src="{{ url_for('static',filename='assets/images/lounge4.jpg')}}" alt="" onclick="enlargeBusinessImage14(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge2.jpg')}}" alt="" onclick="enlargeBusinessImage14(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge4.jpg')}}" alt="" onclick="enlargeBusinessImage14(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge3.jpg')}}" alt="" onclick="enlargeBusinessImage14(this)">
+                      </div>
+                    </div>
+
+                  </div>
+
+
+
+                </div>
+                <div class="loungeDetails col-8">
+                  <div class="loungeNamePrice">
+                    <div class="row">
+
+                      <div class="loungeName col-7">
+                        <p class="colorType1">Plaza Premium Lounge</p>
+                        <div class="rating">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="far fa-star colorType6"></i>
+                          <label for="">(4/5)</label>
+                        </div>
+                      </div>
+                      <div class="loungePrice col-5">
+                        <div class="pricePerson">
+                          <p class="colorType4">Price<span> /Person</span></p>
+                          <label>MYR 999</label>
+                        </div>
+                        <div class="selectLounge">
+                          Select
+                        </div>
+                      </div>
+                      <hr class="hr2">
+                    </div>
+                  </div>
+                  <p class="benefits">Benefits</p>
+                  <div class="benefitsListContainer">
+                    <div class="row">
+                      <div class="list col-5">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> Exclusive conference rooms</li>
+                          <li><i class="far fa-check-circle"></i> Alcoholic & Non-Alcoholic beverages</li>
+                          <li><i class="far fa-check-circle"></i> Television and Wifi</li>
+                          <li><i class="far fa-check-circle"></i> Shower rooms</li>
+                        </ul>
+                      </div>
+                      <div class="list col-4">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> International culsine</li>
+                          <li><i class="far fa-check-circle"></i> Newspapers and Magazines</li>
+                          <li><i class="far fa-check-circle"></i> Private smoking area</li>
+                          <li><i class="far fa-check-circle"></i> Private rooms</li>
+                        </ul>
+                      </div>
+                      <div class="list col-3">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> 24/7 available</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="loungeContainer bgType6">
+              <div class="row">
+                <div class="loungeImages col-4">
+                  <img class="img-fluid mainLoungeImg" src="{{ url_for('static',filename='assets/images/lounge8.jpeg')}}" alt="">
+                  <label class="viewImages" id="showCabin15">View all images</label>
+
+                  <div class="loungeImageContainer bgType3" id="cabinImageContainer15">
+                    <div class="d-flex justify-content-end"><i class="fas fa-times colorType5 closeBtn"
+                        id="closeCabin15"></i></div>
+                    <div class="cabinHeading text-left">
+                      <h3 class="businessClass cabinHeadingActive" id="businessClass15">Golden Lounge Access</h3>
+                    </div>
+                    <div class="businessClassImages" id="businessClassImages15">
+                      <div class="cabinLargeImage mt-3">
+                        <img class="img-fluid largeImage" id="largeBusinessImage15" src="{{ url_for('static',filename='assets/images/lounge4.jpg')}}" alt="">
+                      </div>
+                      <div class="cabinImageList">
+                        <img class="img-fluid smallImage smallImageActive" src="{{ url_for('static',filename='assets/images/lounge4.jpg')}}" alt="" onclick="enlargeBusinessImage15(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge1.jpg')}}" alt="" onclick="enlargeBusinessImage15(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge2.jpg')}}" alt="" onclick="enlargeBusinessImage15(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge3.jpg')}}" alt="" onclick="enlargeBusinessImage15(this)">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="loungeDetails col-8">
+                  <div class="loungeNamePrice">
+                    <div class="row">
+
+                      <div class="loungeName col-7">
+                        <p class="colorType1">Golden Lounge Access</p>
+                        <div class="rating">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="far fa-star colorType6"></i>
+                          <label for="">(4/5)</label>
+                        </div>
+                      </div>
+                      <div class="loungePrice col-5">
+                        <div class="pricePerson">
+                          <p class="colorType4">Price<span> /Person</span></p>
+                          <label>MYR 799</label>
+                        </div>
+                        <div class="selectLounge">
+                          Select
+                        </div>
+                      </div>
+                      <hr class="hr2">
+                    </div>
+                  </div>
+                  <p class="benefits">Benefits</p>
+                  <div class="benefitsListContainer">
+                    <div class="row">
+                      <div class="list col-5">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> Exclusive conference rooms</li>
+                          <li><i class="far fa-check-circle"></i> Alcoholic & Non-Alcoholic beverages</li>
+                          <li><i class="far fa-check-circle"></i> Television and Wifi</li>
+                          <li><i class="far fa-check-circle"></i> Shower rooms</li>
+                        </ul>
+                      </div>
+                      <div class="list col-4">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> International culsine</li>
+                          <li><i class="far fa-check-circle"></i> Newspapers and Magazines</li>
+                          <li><i class="far fa-check-circle"></i> Private smoking area</li>
+                          <li><i class="far fa-check-circle"></i> Private rooms</li>
+                        </ul>
+                      </div>
+                      <div class="list col-3">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> 24/7 available</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="loungeContainer bgType6">
+              <div class="row">
+                <div class="loungeImages col-4">
+                  <img class="img-fluid mainLoungeImg" src="{{ url_for('static',filename='assets/images/lounge8.jpg')}}" alt="">
+                  <label class="viewImages" id="showCabin16">View all images</label>
+
+                  <div class="loungeImageContainer bgType3" id="cabinImageContainer16">
+                    <div class="d-flex justify-content-end"><i class="fas fa-times colorType5 closeBtn"
+                        id="closeCabin16"></i></div>
+                    <div class="cabinHeading text-left">
+                      <h3 class="businessClass cabinHeadingActive" id="businessClass16">Plaza Premium First (KLIA)
+                        (Sepang)</h3>
+                    </div>
+                    <div class="businessClassImages" id="businessClassImages16">
+                      <div class="cabinLargeImage mt-3">
+                        <img class="img-fluid largeImage" id="largeBusinessImage16" src="{{ url_for('static',filename='assets/images/lounge5.jpg')}}" alt="">
+                      </div>
+                      <div class="cabinImageList">
+                        <img class="img-fluid smallImage smallImageActive" src="{{ url_for('static',filename='assets/images/lounge4.jpg')}}" alt="" onclick="enlargeBusinessImage16(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge1.jpg')}}" alt="" onclick="enlargeBusinessImage16(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge2.jpg')}}" alt="" onclick="enlargeBusinessImage16(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge3.jpg')}}" alt="" onclick="enlargeBusinessImage16(this)">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="loungeDetails col-8">
+                  <div class="loungeNamePrice">
+                    <div class="row">
+
+                      <div class="loungeName col-7">
+                        <p class="colorType1">Plaza Premium First (KLIA) (Sepang)</p>
+                        <div class="rating">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="far fa-star colorType6"></i>
+                          <label for="">(4/5)</label>
+                        </div>
+                      </div>
+                      <div class="loungePrice col-5">
+                        <div class="pricePerson">
+                          <p class="colorType4">Price<span> /Person</span></p>
+                          <label>MYR 1099</label>
+                        </div>
+                        <div class="selectLounge">
+                          Select
+                        </div>
+                      </div>
+                      <hr class="hr2">
+                    </div>
+                  </div>
+                  <p class="benefits">Benefits</p>
+                  <div class="benefitsListContainer">
+                    <div class="row">
+                      <div class="list col-5">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> Exclusive conference rooms</li>
+                          <li><i class="far fa-check-circle"></i> Alcoholic & Non-Alcoholic beverages</li>
+                          <li><i class="far fa-check-circle"></i> Television and Wifi</li>
+                          <li><i class="far fa-check-circle"></i> Shower rooms</li>
+                        </ul>
+                      </div>
+                      <div class="list col-4">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> International culsine</li>
+                          <li><i class="far fa-check-circle"></i> Newspapers and Magazines</li>
+                          <li><i class="far fa-check-circle"></i> Private smoking area</li>
+                          <li><i class="far fa-check-circle"></i> Private rooms</li>
+                        </ul>
+                      </div>
+                      <div class="list col-3">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> 24/7 available</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="loungeContainer bgType6">
+              <div class="row">
+                <div class="loungeImages col-4">
+                  <img class="img-fluid mainLoungeImg" src="{{ url_for('static',filename='assets/images/lounge11.jpg')}}" alt="">
+                  <label class="viewImages" id="showCabin17">View all images</label>
+
+                  <div class="loungeImageContainer bgType3" id="cabinImageContainer17">
+                    <div class="d-flex justify-content-end"><i class="fas fa-times colorType5 closeBtn"
+                        id="closeCabin17"></i></div>
+                    <div class="cabinHeading text-left">
+                      <h3 class="businessClass cabinHeadingActive" id="businessClass17">Terminal VIP Lounge</h3>
+                    </div>
+                    <div class="businessClassImages" id="businessClassImages17">
+                      <div class="cabinLargeImage mt-3">
+                        <img class="img-fluid largeImage" id="largeBusinessImage17" src="{{ url_for('static',filename='assets/images/lounge6.jpg')}}" alt="">
+                      </div>
+                      <div class="cabinImageList">
+                        <img class="img-fluid smallImage smallImageActive" src="{{ url_for('static',filename='assets/images/lounge4.jpg')}}" alt="" onclick="enlargeBusinessImage17(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge1.jpg')}}" alt="" onclick="enlargeBusinessImage17(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge2.jpg')}}" alt="" onclick="enlargeBusinessImage17(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge3.jpg')}}" alt="" onclick="enlargeBusinessImage17(this)">
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+                <div class="loungeDetails col-8">
+                  <div class="loungeNamePrice">
+                    <div class="row">
+
+                      <div class="loungeName col-7">
+                        <p class="colorType1">Terminal VIP Lounge</p>
+                        <div class="rating">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="far fa-star colorType6"></i>
+                          <label for="">(4/5)</label>
+                        </div>
+                      </div>
+                      <div class="loungePrice col-5">
+                        <div class="pricePerson">
+                          <p class="colorType4">Price<span> /Person</span></p>
+                          <label>MYR 800</label>
+                        </div>
+                        <div class="selectLounge">
+                          Select
+                        </div>
+                      </div>
+                      <hr class="hr2">
+                    </div>
+                  </div>
+                  <p class="benefits">Benefits</p>
+                  <div class="benefitsListContainer">
+                    <div class="row">
+                      <div class="list col-5">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> Exclusive conference rooms</li>
+                          <li><i class="far fa-check-circle"></i> Alcoholic & Non-Alcoholic beverages</li>
+                          <li><i class="far fa-check-circle"></i> Television and Wifi</li>
+                          <li><i class="far fa-check-circle"></i> Shower rooms</li>
+                        </ul>
+                      </div>
+                      <div class="list col-4">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> International culsine</li>
+                          <li><i class="far fa-check-circle"></i> Newspapers and Magazines</li>
+                          <li><i class="far fa-check-circle"></i> Private smoking area</li>
+                          <li><i class="far fa-check-circle"></i> Private rooms</li>
+                        </ul>
+                      </div>
+                      <div class="list col-3">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> 24/7 available</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="loungeContainer bgType6">
+              <div class="row">
+                <div class="loungeImages col-4">
+                  <img class="img-fluid mainLoungeImg" src="{{ url_for('static',filename='assets/images/lounge10.png')}}" alt="">
+                  <label class="viewImages" id="showCabin18">View all images</label>
+
+                  <div class="loungeImageContainer bgType3" id="cabinImageContainer18">
+                    <div class="d-flex justify-content-end"><i class="fas fa-times colorType5 closeBtn"
+                        id="closeCabin18"></i></div>
+                    <div class="cabinHeading text-left">
+                      <h3 class="businessClass cabinHeadingActive" id="businessClass18">Sama Sama Express KLIA</h3>
+                    </div>
+                    <div class="businessClassImages" id="businessClassImages18">
+                      <div class="cabinLargeImage mt-3">
+                        <img class="img-fluid largeImage" id="largeBusinessImage18" src="{{ url_for('static',filename='assets/images/lounge7.jpg')}}" alt="">
+                      </div>
+                      <div class="cabinImageList">
+                        <img class="img-fluid smallImage smallImageActive" src="{{ url_for('static',filename='assets/images/lounge4.jpg')}}" alt="" onclick="enlargeBusinessImage18(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge1.jpg')}}" alt="" onclick="enlargeBusinessImage18(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge2.jpg')}}" alt="" onclick="enlargeBusinessImage18(this)">
+                        <img class="img-fluid smallImage" src="{{ url_for('static',filename='assets/images/lounge3.jpg')}}" alt="" onclick="enlargeBusinessImage18(this)">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="loungeDetails col-8">
+                  <div class="loungeNamePrice">
+                    <div class="row">
+
+                      <div class="loungeName col-7">
+                        <p class="colorType1">Sama Sama Express KLIA</p>
+                        <div class="rating">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="far fa-star colorType6"></i>
+                          <label for="">(4/5)</label>
+                        </div>
+                      </div>
+                      <div class="loungePrice col-5">
+                        <div class="pricePerson">
+                          <p class="colorType4">Price<span> /Person</span></p>
+                          <label>MYR 999</label>
+                        </div>
+                        <div class="selectLounge">
+                          Select
+                        </div>
+                      </div>
+                      <hr class="hr2">
+                    </div>
+                  </div>
+                  <p class="benefits">Benefits</p>
+                  <div class="benefitsListContainer">
+                    <div class="row">
+                      <div class="list col-5">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> Exclusive conference rooms</li>
+                          <li><i class="far fa-check-circle"></i> Alcoholic & Non-Alcoholic beverages</li>
+                          <li><i class="far fa-check-circle"></i> Television and Wifi</li>
+                          <li><i class="far fa-check-circle"></i> Shower rooms</li>
+                        </ul>
+                      </div>
+                      <div class="list col-4">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> International culsine</li>
+                          <li><i class="far fa-check-circle"></i> Newspapers and Magazines</li>
+                          <li><i class="far fa-check-circle"></i> Private smoking area</li>
+                          <li><i class="far fa-check-circle"></i> Private rooms</li>
+                        </ul>
+                      </div>
+                      <div class="list col-3">
+                        <ul>
+                          <li><i class="far fa-check-circle"></i> 24/7 available</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- -----------------------------------------------------SideBar Content Starts here------------------------------------------------------------- -->
+        <div class="sidebarContainer col-lg-3">
+          <div class="cartContainer">
+            <div class="cartItems" id="noItems">No Items Selected</div>
+            <div class="itemsList bgType6 px-3 py-2">
+              <p id="cartItemHead" class="colorType4">Upgrade Travel</p>
+              <div id="cartPassenger1">
+                <div class="firstItem d-flex justify-content-between align-items-center px-2 my-2">
+                  <p class="colorType4"><i class="fas fa-briefcase mx-2"></i>Robert D. (BOM-KUL)</p>
+                  <p class="colorType4">MYR 600</p>
+                </div>
+              </div>
+              <div id="cartPassenger2">
+                <div class="firstItem d-flex justify-content-between align-items-center px-2 my-2">
+                  <p class="colorType4"><i class="fas fa-chair mx-2"></i>Robert D. (KUL-SYD)</p>
+                  <p class="colorType4">MYR 700</p>
+                </div>
+              </div>
+              <div id="cartPassenger3">
+                <div class="firstItem d-flex justify-content-between align-items-center px-2 my-2">
+                  <p class="colorType4"><i class="fas fa-briefcase mx-2"></i>Miss Pot (BOM-KUL)</p>
+                  <p class="colorType4">MYR 600</p>
+                </div>
+              </div>
+              <div id="cartPassenger4">
+                <div class="firstItem d-flex justify-content-between align-items-center px-2 my-2">
+                  <p class="colorType4"><i class="fas fa-chair mx-2"></i>Miss Pot (KUL-SYD)</p>
+                  <p class="colorType4">MYR 700</p>
+                </div>
+              </div>
+              <div id="addCartBtn" class="addToCartBtn proceedPaymentBtn bgType9 text-center px-3 py-2 m-3">
+                <a href="{{ url_for('main.review')}}"><i class="fas fa-shopping-cart mx-2"></i>Add to Cart</a>
+              </div>
+            </div>
+            <div id="loungeCartItems" class="itemsList bgType6 px-3 py-2">
+              <p id="loungeItemHead" class="colorType4">Lounge</p>
+              <h6>Intercontinental Dhaka Balaka Executive Lounge (BOM)</h6>
+              <div id="loungePassenger">
+                <div class="firstItem d-flex justify-content-between align-items-center my-2">
+                  <p class="colorType4">Passenger x 1</p>
+                  <p class="colorType4">MYR 699</p>
+                </div>
+              </div>
+
+              <div id="loungeAddCartBtn" class="addToCartBtn proceedPaymentBtn bgType9 text-center px-3 py-2 m-3">
+                <a href="{{ url_for('main.review')}}"><i class="fas fa-shopping-cart mx-2"></i>Add to Cart</a>
+              </div>
+            </div>
+            <div class="advertiseContainer">
+              <img class="img-fluid" src="{{ url_for('static', filename='assets/images/advertise.png')}}" alt="" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+{% endblock content %}
+
+  

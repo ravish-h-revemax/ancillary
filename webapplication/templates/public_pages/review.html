@@ -1,0 +1,249 @@
+{% extends "public_assets.html" %}
+{% block content %}
+    <main class="container">
+        <header class="row heading">
+            <div class="col-lg-8">
+                <img class="img-fluid logo" src="{{ url_for('static', filename='assets/images/logo.png')}}" alt="" />
+            </div>
+            <div class="col-lg-4 d-flex align-items-center justify-content-between">
+                <div class="bookingReference">
+                    <a href="{{ url_for('main.index')}}">Go to Booking reference</a>
+                </div>
+                <div class="userDetails">
+                    <p class="userName">Hello Robert!</p>
+                    <i class="bi bi-person userIcon colorType2"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="stepsHeader bgType3">
+            <ul class="text-center">
+                <li>Three Steps to upgrade</li>
+                <li><span id="checkedSpan"><i class="fa fa-check" id="stepHeaderCheckIcon"></i></span>Select Upgrade
+                </li>
+                <li class="stepsHeaderActive"><span>2</span>Review and Submit</li>
+                <li><span>3</span>Payment Information</li>
+            </ul>
+        </div>
+
+        <section class="sectionContainer bgType1">
+            <div class="row">
+                <div class="reviewAncillaryItems col-9 bgType6 my-4 py-3">
+                    <div class="reviewHeadingContainer">
+                        <div class="headingName">
+                            <h5 class="colorType4">Review Ancillary Items</h5>
+                        </div>
+                        <div class="backToUpgrade d-flex">
+                            <a href="{{ url_for('main.upgrade')}}" class="d-flex"><i class='fa fa-angle-left colorType2'></i>
+                                <p class="colorType2">Back to Upgrade Option</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="reviewTravelOption d-flex align-items-center mt-4">
+                        <div class="planeIconContainer bgType7">
+                            <i class="fa fa-plane colorType2"></i>
+                        </div>
+                        <div class="travelOptionText">
+                            <h5 class="colorType4">Upgrade Travel Option</h5>
+                            <p>Items: 03</p>
+                        </div>
+                    </div>
+                    <div class="reviewPassengerDetails">
+                        <div class="reviewPassengerContainer align-items-center">
+                            <div class="row mx-3">
+                                <div class="reviewPassengerNameContainer col-3 d-flex align-items-center">
+                                    <div class="profileIcon">
+                                        <i class="bi bi-person userIcon colorType4 bgType8"
+                                            style="border: 1px solid #c0c2c5;padding: 0.8rem;"></i>
+                                    </div>
+                                    <div class="reviewPassengerName">
+                                        <p class="colorType4">Robert Downey</p>
+                                        <label class="colorType6">Passenger 1</label>
+                                    </div>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <div class="city">
+                                        <p>Mumbai</p>
+                                        <p class="colorType4">(BOM)</p>
+                                    </div>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <div class="timeDate text-center">
+                                        <label>5hr 10m</label>
+                                        <label>- - - - - - - - - - - - - - - - - - - - - - - - -
+                                            <i class="fas fa-plane planeIcon"></i></label>
+                                        <label>10 Jan 2021</label>
+                                    </div>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <div class="city toCity">
+                                        <p>Kuala Lampur</p>
+                                        <p class="colorType4">(KUL)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviewClassPriceContainer">
+                            <div class="row">
+                                <div class="reviewClass col-4 text-center">
+                                    <p class="colorType4">Upgrade to: <span
+                                            class="colorType1 reviewBusiness">BUSINESS</span><span class="editIcon"><i
+                                                class="fas fa-edit"></i> Edit</span></p>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <p>Price: <span class="colorType1 reviewBusiness">MYR 800</span></p>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <p>Bid Conversion Choice: <span style="font-weight: 700; color: red;">MEDIUM</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviewPassengerDetails">
+                        <div class="reviewPassengerContainer align-items-center">
+                            <div class="row mx-3">
+                                <div class="reviewPassengerNameContainer col-3 d-flex align-items-center">
+                                    <div class="profileIcon">
+                                        <i class="bi bi-person userIcon colorType4 bgType8"
+                                            style="border: 1px solid #c0c2c5;padding: 0.8rem;"></i>
+                                    </div>
+                                    <div class="reviewPassengerName">
+                                        <p class="colorType4">Robert Downey</p>
+                                        <label class="colorType6">Passenger 1</label>
+                                    </div>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <div class="city">
+                                        <p>Kuala Lampur</p>
+                                        <p class="colorType4">(KUL)</p>
+                                    </div>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <div class="timeDate text-center">
+                                        <label>5hr 10m</label>
+                                        <label>- - - - - - - - - - - - - - - - - - - - - - - - -
+                                            <i class="fas fa-plane planeIcon"></i></label>
+                                        <label>10 Jan 2021</label>
+                                    </div>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <div class="city toCity">
+                                        <p>Sydney</p>
+                                        <p class="colorType4">(SYD)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviewClassPriceContainer">
+                            <div class="row">
+                                <div class="reviewClass col-4 text-center">
+                                    <p class="colorType4">Upgrade to: <span
+                                            class="colorType1 reviewBusiness">FIRST</span><span class="editIcon"><i
+                                                class="fas fa-edit"></i> Edit</span></p>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <p>Price: <span class="colorType1 reviewBusiness">MYR 1100</span></p>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <p>Bid Conversion Choice: <span
+                                            style="font-weight: 700; color: rgb(88, 189, 88)">CONFIRM</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviewPassengerDetails" style="border: none;">
+                        <div class="reviewPassengerContainer align-items-center">
+                            <div class="row mx-3">
+                                <div class="reviewPassengerNameContainer col-3 d-flex align-items-center">
+                                    <div class="profileIcon">
+                                        <i class="bi bi-person userIcon colorType4 bgType8"
+                                            style="border: 1px solid #c0c2c5;padding: 0.8rem;"></i>
+                                    </div>
+                                    <div class="reviewPassengerName">
+                                        <p class="colorType4">Miss Pot</p>
+                                        <label class="colorType6">Passenger 2</label>
+                                    </div>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <div class="city">
+                                        <p>Kuala Lampur</p>
+                                        <p class="colorType4">(KUL)</p>
+                                    </div>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <div class="timeDate text-center">
+                                        <label>5hr 10m</label>
+                                        <label>- - - - - - - - - - - - - - - - - - - - - - - - -
+                                            <i class="fas fa-plane planeIcon"></i></label>
+                                        <label>10 Jan 2021</label>
+                                    </div>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <div class="city toCity">
+                                        <p>Sydney</p>
+                                        <p class="colorType4">(SYD)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviewClassPriceContainer">
+                            <div class="row">
+                                <div class="reviewClass col-4 text-center">
+                                    <p class="colorType4">Upgrade to: <span
+                                            class="colorType1 reviewBusiness">FIRST</span><span class="editIcon"><i
+                                                class="fas fa-edit"></i> Edit</span></p>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <p>Price: <span class="colorType1 reviewBusiness">MYR 1100</span></p>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <p>Bid Conversion Choice: <span
+                                            style="font-weight: 700; color: rgb(88, 189, 88)">CONFIRM</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cartSummary col-3 my-4 px-4">
+                    <div class="cartHeadingContainer">
+                        <h3><i class="fas fa-shopping-cart"></i> Cart Summary</h3>
+                    </div>
+                    <div class="cartItemsContainer my-3">
+                        <div class="cartItemsHeadContainer bgType6 d-flex justify-content-between align-items-center">
+                            <h5><i class="fa fa-angle-down colorType2" id="arrowIcon1"></i> Ancillary Items</h5>
+                            <p>Amount</p>
+                        </div>
+                        <div class="cartItemsDetailsContainer bgType6 d-flex justify-content-between align-items-center">
+                            <p>Upgrade Travel</p>
+                            <p>MYR 3000</p>
+                        </div>
+                        <div id="itemTotal" class="cartItemsDetailsContainer bgType6 d-flex justify-content-between align-items-center">
+                            <p>Total</p>
+                            <p>MYR 3000</p>
+                        </div>
+                        <div class="cartItemsHeadContainer bgType6 d-flex justify-content-between align-items-center mt-1">
+                            <h5><i class="fa fa-angle-down colorType2" id="arrowIcon1"></i> Tax & Charges</h5>
+                            <p style="font-size: 12px; font-weight: 600;">MYR 500</p>
+                        </div>
+
+                        <div class="cartItemsHeadContainer bgType6 d-flex justify-content-between align-items-center mt-1">
+                            <h4 style="font-size: 14px; font-weight: 600;">Total Payable Amount:</h4>
+                            <p style="font-size: 12px; font-weight: 600;">MYR 3500</p>
+                        </div>
+
+                        <div class="proceedPaymentContainer my-3 px-3">
+                            <a href="{{ url_for('main.payment')}}">
+                                <div class="proceedPaymentBtn bgType9 text-center px-3 py-2">
+                                    Proceed to Payment
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        {% endblock content %}

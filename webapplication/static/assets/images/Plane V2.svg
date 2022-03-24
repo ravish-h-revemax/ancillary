@@ -1,0 +1,17 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 719 2392" style="enable-background:new 0 0 719 2392" xml:space="preserve">
+  <style>
+    .st0{fill:#fff}.st2{display:inline}.st3{font-family:&apos;MyriadPro-Regular&apos;}.st4{font-size:23px}.st5{font-size:19.7693px}.st6{fill:#61666f}.st7{fill:#b7000f}.st8{font-size:18px}.st9{fill:#f998a0}
+  </style>
+  <g id="Body">
+    <image style="overflow:visible;opacity:.75;enable-background:new" width="567" height="2390" xlink:href="45E8771B.png" transform="translate(76 1)"/>
+    <path class="st0" d="M199.1 16c-24 39-50.8 90.9-71.7 155-27.4 83.8-34.8 158.1-35.9 212v1418c0 20.4 2.8 102.7 11 213 1.1 15.1 2.1 27.5 2.8 35.8 0 0 5.7 76.1 17.1 159.2 1.7 12.3 4.1 19.7 8 29 10.2 24.3 30.4 49 107.6 88 29.8 15 79.3 33.4 129.5 50 50.9-14.4 82.1-32.3 110.6-47 83.3-42.9 101.4-75.7 107.6-89 6.3-13.4 8.7-24.5 11-36 17.2-87.3 18.3-159.9 24.9-266 4.4-70.1 6-136 6-136V355c-2.5-47.9-10.5-111-32.9-182-20.7-65.4-47.4-118-70.8-157H199.1z"/>
+  </g>
+  <g id="Wing_1">
+    <image style="overflow:visible;opacity:.75;enable-background:new" width="79" height="293" xlink:href="45E87719.png" transform="translate(26 1073)"/>
+    <path class="st0" d="M41.5 1351h48v-263l-48 46z"/>
+  </g>
+  <g id="Wing_2">
+    <image style="overflow:visible;opacity:.75;enable-background:new" width="79" height="293" xlink:href="45E8771F.png" transform="translate(614 1073)"/>
+    <path class="st0" d="M677.5 1351h-48v-263l48 46z"/>
+  </g>
+</svg>

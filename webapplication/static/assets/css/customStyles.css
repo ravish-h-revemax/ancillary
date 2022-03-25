@@ -1331,3 +1331,66 @@ margin: 0.2rem 0;
     font-size: 8px;
 }
 /*--------------------------------------------------- Payment Page CSS Ends here------------------------------------------------------ */
+
+
+/* ----------------------------------------------------login page---------------------------------------------------------------------- */
+.login_page {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);  
+    border: 2px solid black;
+    padding: 30px 50px; 
+    border-radius: 20px;
+}
+.login_page h1 {
+    text-align: center;
+    font-size:40px;
+    margin-bottom:10px;
+    padding:13px 0;
+}
+.text_box {
+    width: 100%;
+    overflow:hidden;
+    font-size:20px;
+    padding: 8px 0;
+    /* border-bottom:1px solid */
+}
+.text_box i{
+    width:26px;
+    float:left;
+    text-align:center;
+}
+.text_box input{
+    /* border:none;
+    outline:none; */
+    border-radius: 5px;
+    background:none;
+    color:black;
+    font-size:18px;
+    width:90%;
+    float:left;
+    margin:0 10px;
+}
+.btn{
+    text-align: center;
+    width:20%;
+    background:none;
+    border:2px solid;
+    color:#fff;
+    padding:5px;
+    font-size:18px;
+    cursor:pointer;
+    margin:12px 0;
+    background-color:lightblue;
+}
+#loginBtn{
+    border: none;
+    background: transparent;
+}
+.loginMsg{
+    color: red;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+/* ----------------------------------------------------login page---------------------------------------------------------------------- */

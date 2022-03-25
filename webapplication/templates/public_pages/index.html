@@ -33,8 +33,38 @@
                 <button class="loginBtn">Log In/Sign Up</button>
             </div> -->
           </div>
+          <div class="login_page">
+              <h1>Login</h1>
+              <hr>
+             
+              <form action="" method="POST" id="login_form">
+                  <div class="text_box">
+                  <i class="fa fa-user" aria-hidden="true"></i>   
+                  <label for="uname">USERNAME</label>
+                  <input type="text" id="username" name="username"><br>
+                  </div>
+                  <div class="text_box">
+                  <i class="fa fa-lock" aria-hidden="true"></i> 
+                  <label for="password">PASSWORD</label>
+                  <input type="password" id="password" name="password"><br>
+                  </div>
+                  {% if message %}
+                  <p class="loginMsg">{{ message }}</p>
+                  
+                  {% endif %}
+                  <div class="d-flex justify-content-center">
+                    <div class="btn">
+                        <input id="loginBtn" type="submit"  value="login">
+                        </div>
+                  </div>
+              </form>
+              </div>
+          </div>
       </main>
 
-  {% endblock content %}
+      
+
 
    
+
+      {% endblock content %}

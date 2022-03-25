@@ -28,8 +28,6 @@ def upgrade():
 
 @main.route("/review", methods = ['GET', 'POST'])
 def review():
-    
-    
     if session.get("user") == True:
         return render_template('public_pages/review.html')
     else:
@@ -37,7 +35,6 @@ def review():
 
 @main.route("/payment", methods = ['GET', 'POST'])
 def payment():
-    return render_template('public_pages/payment.html')
     if session.get("user") == True:
         return render_template('public_pages/payment.html')
     else:

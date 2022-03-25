@@ -46,5 +46,11 @@
     <!-- Custom JS Link-->
     <script src="{{ url_for('static', filename='assets/js/script.js')}}"></script>
     <script src="{{ url_for('static', filename='assets/js/svgGauge.js')}}"></script>
+    <script>
+      let loginMsg = document.querySelector(".loginMsg");
+      setTimeout(function(){
+        loginMsg.style.display = "none";
+      }, 3000);
+    </script>
   </body>
 </html>

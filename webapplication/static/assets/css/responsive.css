@@ -1,0 +1,23 @@
+@media only screen and (min-width:1100px) and (max-width:1300px){
+    .sectionContainer{
+        padding: 0 1rem;
+    }
+    .travelMenu{
+        padding: 2rem 1rem 0 1rem;
+    }
+    .planeImage {
+        margin-top: -60px;
+    }
+    .row1Left > svg, .row1Right > svg{
+        width: 15px;
+    }
+    .cardNumberContainer p{
+        font-size: 10px;
+    }
+}
+
+@media only screen and (min-width:1201px) and (max-width:1400px){
+    .row1Left > svg, .row1Right > svg{
+        width: 18px;
+    }
+}

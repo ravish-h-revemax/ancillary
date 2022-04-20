@@ -19,10 +19,10 @@
         <div class="stepsHeader bgType3">
             <ul class="text-center">
                 <li>Three Steps to upgrade</li>
-                <li><span id="checkedSpan"><i class="fa fa-check" id="stepHeaderCheckIcon"></i></span>Select Upgrade
+                <li><a href="{{ url_for('main.upgrade')}}"><span id="checkedSpan"><i class="fa fa-check" id="stepHeaderCheckIcon"></i></span>Select Upgrade</a>
                 </li>
-                <li class="stepsHeaderActive"><span>2</span>Review and Submit</li>
-                <li><span>3</span>Payment Information</li>
+                <li class="stepsHeaderActive"><a href="{{ url_for('main.review')}}"> <span class="colorType3">2</span>Review and Submit </a></li>
+                <li><a href="{{ url_for('main.payment')}}"><span class="colorType3">3</span>Payment Information</a></li>
             </ul>
         </div>
 

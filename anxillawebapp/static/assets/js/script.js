@@ -151,32 +151,32 @@ let dropdown6 = document.querySelector("#list6");
 
 passengerSelect1.addEventListener("click", function () {
   // dropdown1.style.display = "block";
-  if (dropdown1.style.display == "none") {
-    dropdown1.style.display = "block";
-    arrowIcon1.style.transform = "rotate(180deg)";
-  } else {
+  if (dropdown1.style.display == "block") {
     dropdown1.style.display = "none";
     arrowIcon1.style.transform = "rotate(0deg)";
+  } else {
+    dropdown1.style.display = "block";
+    arrowIcon1.style.transform = "rotate(180deg)";
   }
 });
 passengerSelect2.addEventListener("click", function () {
   // dropdown2.style.display = "block";
-  if (dropdown2.style.display == "none") {
-    dropdown2.style.display = "block";
-    arrowIcon2.style.transform = "rotate(180deg)";
-  } else {
+  if (dropdown2.style.display == "block") {
     dropdown2.style.display = "none";
     arrowIcon2.style.transform = "rotate(0deg)";
+  } else {
+    dropdown2.style.display = "block";
+    arrowIcon2.style.transform = "rotate(180deg)";
   }
 });
 passengerSelect3.addEventListener("click", function () {
   // dropdown3.style.display = "block";
-  if (dropdown3.style.display == "none") {
-    dropdown3.style.display = "block";
-    arrowIcon3.style.transform = "rotate(180deg)";
-  } else {
+  if (dropdown3.style.display == "block") {
     dropdown3.style.display = "none";
     arrowIcon3.style.transform = "rotate(0deg)";
+  } else {
+    dropdown3.style.display = "block";
+    arrowIcon3.style.transform = "rotate(180deg)";
   }
   dropdown4.style.display = "none";
   dropdown5.style.display = "none";
@@ -185,12 +185,12 @@ passengerSelect3.addEventListener("click", function () {
 
 passengerSelect4.addEventListener("click", function () {
   // dropdown4.style.display = "block";
-  if (dropdown4.style.display == "none") {
-    dropdown4.style.display = "block";
-    arrowIcon4.style.transform = "rotate(180deg)";
-  } else {
+  if (dropdown4.style.display == "block") {
     dropdown4.style.display = "none";
     arrowIcon4.style.transform = "rotate(0deg)";
+  } else {
+    dropdown4.style.display = "block";
+    arrowIcon4.style.transform = "rotate(180deg)";
   }
   dropdown3.style.display = "none";
   dropdown5.style.display = "none";
@@ -198,12 +198,12 @@ passengerSelect4.addEventListener("click", function () {
 });
 passengerSelect5.addEventListener("click", function () {
   // dropdown5.style.display = "block";
-  if (dropdown5.style.display == "none") {
-    dropdown5.style.display = "block";
-    arrowIcon5.style.transform = "rotate(180deg)";
-  } else {
+  if (dropdown5.style.display == "block") {
     dropdown5.style.display = "none";
     arrowIcon5.style.transform = "rotate(0deg)";
+  } else {
+    dropdown5.style.display = "block";
+    arrowIcon5.style.transform = "rotate(180deg)";
   }
   dropdown4.style.display = "none";
   dropdown3.style.display = "none";
@@ -211,12 +211,12 @@ passengerSelect5.addEventListener("click", function () {
 });
 passengerSelect6.addEventListener("click", function () {
   // dropdown6.style.display = "block";
-  if (dropdown6.style.display == "none") {
-    dropdown6.style.display = "block";
-    arrowIcon6.style.transform = "rotate(180deg)";
-  } else {
+  if (dropdown6.style.display == "block") {
     dropdown6.style.display = "none";
     arrowIcon6.style.transform = "rotate(0deg)";
+  } else {
+    dropdown6.style.display = "block";
+    arrowIcon6.style.transform = "rotate(180deg)";
   }
   dropdown4.style.display = "none";
   dropdown5.style.display = "none";

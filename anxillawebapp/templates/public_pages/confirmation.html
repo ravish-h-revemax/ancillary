@@ -1,0 +1,29 @@
+{% extends "public_assets.html" %}
+{% block content %}
+
+
+<div class="container p-4">
+    <div class="logo_container">
+        <img class="img-fluid logo" src="{{ url_for('static', filename='assets/images/logo.png')}}" alt="">
+    </div>
+    <div class="confirm_bg my-4">
+        <img class="img-fluid w-100" src="{{ url_for('static', filename='assets/images/confirm-bg.png')}}" alt="">
+    </div>
+    <div class="confirm-text">
+        <p class="my-4" style="font-weight: 600; font-size: 18px; color: #095fac;">Dear Robert,</p>
+        <p>Thank you for using upgrade travel option. Your confirmation ID is #1238123</p>
+        <p>Please note that the upgrade price will be charge only if you are upgraded to your selected ancillary.</p>
+        <p class="mt-4" style="font-weight: 600; font-size: 18px; color: #042e5f;">Regards,</p>
+        <p style="font-weight: 600; font-size: 18px; color: #042e5f;">Anxilla</p>
+    </div>
+    <div class="proceedPaymentContainer d-flex justify-content-center">
+        <a href="{{ url_for('main.upgrade')}}">
+            <div class="proceedPaymentBtn bgType9 text-center px-3 py-2 mt-4">
+               Go Home
+            </div>
+        </a>
+    </div>
+</div>
+
+
+{% endblock content %}

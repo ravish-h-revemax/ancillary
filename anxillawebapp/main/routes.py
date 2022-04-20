@@ -39,3 +39,11 @@ def payment():
         return render_template('public_pages/payment.html')
     else:
         return redirect(url_for('main.index'))
+
+
+@main.route("/confirmation", methods = ['GET', 'POST'])
+def confirmation():
+    if session.get("user") == True:
+        return render_template('public_pages/confirmation.html')
+    else:
+        return redirect(url_for('main.index'))
